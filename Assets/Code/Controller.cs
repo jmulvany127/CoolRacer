@@ -9,6 +9,7 @@ public class Controller : MonoBehaviour
     Rigidbody2D racer;
     Vector2 move;
     Vector2 formermove;
+    Vector2 velocity;
     public float speed;
 
     float formerangle;
@@ -16,6 +17,8 @@ public class Controller : MonoBehaviour
     void Start()
     {
         racer = GetComponent<Rigidbody2D>();
+        velocity.x = 0;
+        velocity.y = 0;
     }
 
     void Update()
@@ -41,27 +44,47 @@ public class Controller : MonoBehaviour
     void FixedUpdate(){
         
 
-        float upacceleration = 0.05f;
-        float downacceleration = 0.05f;
+        float upacceleration = 0.20f;
+        float downacceleration = 0.20f;
 
-        // When the joystick is not used
-        // the car will keep on moving but get slower
-        if(move.x == 0 && move.y == 0){
-            racer.MovePosition(racer.position + formermove * speed * Time.fixedDeltaTime);
-            if(speed > 0){
-                speed = speed - downacceleration;
-            }
-            
-        }
+
         
         
         // When the joystick is used
         // the car will move to the desired direction and get faster
-        else{
-            racer.MovePosition(racer.position + move * speed * Time.fixedDeltaTime);
-            formermove = move;
+        
+        float reduce = 0.1f;
+        float max_velocity = 3;
+        float velocity_control_factor = 0.9f;
+        velocity = velocity + reduce * move * speed * Time.fixedDeltaTime;
+        if (velocity.x > max_velocity) {
+            velocity.x = max_velocity;
+        }
+        if (velocity.y > max_velocity) {
+            velocity.y = max_velocity;
+        }
+
+        velocity = velocity * velocity_control_factor;
+
+        racer.MovePosition(racer.position + velocity);
+        formermove = move;
+        if(speed < 10){
             speed = speed + upacceleration;
         }
+        
+        // When the joystick is not used
+        // the car will keep on moving but get slower
+        if(move.x == 0 && move.y == 0){
+            //racer.MovePosition(racer.position + formermove * speed * Time.fixedDeltaTime);
+            if(speed > downacceleration){
+                speed = speed - downacceleration;
+                //speed = speed * 0.9f;
+            } else {
+                speed = 0;
+            }
+            
+        }
+
         
     }
 }
