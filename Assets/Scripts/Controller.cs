@@ -53,12 +53,16 @@ public class Controller : MonoBehaviour
             //racer.MovePosition(racer.position + formermove * speed * Time.fixedDeltaTime);
             if(speed > downacceleration){
                 speed = speed - downacceleration;
-                //speed = speed * 0.9f;
             } else {
                 speed = 0;
                 velocity = new Vector2(0, 0);
             }
-        } 
+
+        } else {
+        if(speed < 10){
+            speed = speed + upacceleration;
+        }
+        }
 
         // When the joystick is used
         // the car will move to the desired direction and get faster        
@@ -77,24 +81,24 @@ public class Controller : MonoBehaviour
 
         racer.MovePosition(racer.position + velocity);
         formermove = move;
-        if(speed < 10){
-            speed = speed + upacceleration;
-        }
+
         
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //blackole has tag Player
         if(collision.gameObject.tag == "Bouncer")
         {
             float bounce = 2f;
             velocity *= -bounce;
-
         }
-
-
     }
-    
+
+    public void ResetPosition() {
+        Vector2 zero = new Vector2(0,0);
+        velocity = zero;
+        var angle = Mathf.Atan2(1,0)*Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
 }

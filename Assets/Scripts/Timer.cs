@@ -45,6 +45,12 @@ public class Timer : MonoBehaviour
     {
         timerText.text = hasFormat ? currentTime.ToString(timerFormats[format]) : currentTime.ToString();
     }
+
+    public float ClearTimer() {
+        float score = currentTime;
+        currentTime = 0f;
+        return score;
+    }
 }
 
 public enum TimerFormats

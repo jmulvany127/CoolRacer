@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spike
   - Bouncer
+  - Logic
   layers:
   - Default
   - TransparentFX
