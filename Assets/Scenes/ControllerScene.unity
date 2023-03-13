@@ -407,7 +407,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: '---
+
+'
 --- !u!222 &431286059
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -823,6 +825,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logic: {fileID: 0}
+  time: {fileID: 0}
+  car: {fileID: 0}
 --- !u!1 &652086479
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +857,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logic: {fileID: 0}
+  time: {fileID: 0}
+  car: {fileID: 0}
 --- !u!4 &652086481
 Transform:
   m_ObjectHideFlags: 0
@@ -1086,7 +1092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1221953bd8e10104eb38f3d079b044c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScore: 2
+  playerScore: 0
   shownScore: {fileID: 431286058}
 --- !u!4 &1299427234
 Transform:
@@ -2061,6 +2067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6304968912716619760, guid: 424cb9982519ac84db324332b77967af, type: 3}
+      propertyPath: m_TagString
+      value: Timer
+      objectReference: {fileID: 0}
     - target: {fileID: 6304968912716619765, guid: 424cb9982519ac84db324332b77967af, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2197,7 +2207,7 @@ GameObject:
   - component: {fileID: 2089107479}
   m_Layer: 0
   m_Name: Racer
-  m_TagString: Untagged
+  m_TagString: Racer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
