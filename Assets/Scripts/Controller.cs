@@ -93,6 +93,11 @@ public class Controller : MonoBehaviour
             float bounce = 2f;
             velocity *= -bounce;
         }
+
+        if(collision.gameObject.tag == "Snowball")
+        {
+            speed = 1f;
+        }
     }
 
     public void ResetPosition() {
