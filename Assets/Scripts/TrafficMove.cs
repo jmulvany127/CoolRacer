@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class TrafficMove : MonoBehaviour
 {
-    public float end_zone = -50f;
+    public int end_zone;
     // Start is called before the first frame update
     public float Speed = 5f;
 
     void Start()
     {
-        if(Time.realtimeSinceStartup > 180){
-            Speed = 20f;
+        end_zone = -20;
+        if(Time.realtimeSinceStartup > 250){
+            Speed = 30f;
         }
         else {
-            Speed += 0.08f * Time.realtimeSinceStartup;
+            Speed += 0.1f * Time.realtimeSinceStartup;
         }
     }
 

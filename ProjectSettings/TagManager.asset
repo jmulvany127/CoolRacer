@@ -9,6 +9,7 @@ TagManager:
   - Logic
   - Timer
   - Racer
+  - Traffic
   layers:
   - Default
   - TransparentFX

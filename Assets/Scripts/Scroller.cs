@@ -16,7 +16,7 @@ public class Scroller : MonoBehaviour {
     void Update()
     {
         _img.uvRect = new Rect(_img.uvRect.position + new Vector2(speed,_y) * Time.deltaTime,_img.uvRect.size);
-        if(speed < 1.5f){
+        if(speed < 2f){
             speed = speed + 0.00005f;
         }
 
