@@ -98,6 +98,13 @@ public class Controller : MonoBehaviour
         {
             speed = 1f;
         }
+
+        if(collision.gameObject.tag == "Explode")
+        {
+            Vector2 explodeDirection = racer.transform.position - collision.gameObject.transform.position;
+            racer.GetComponent<Rigidbody2D>().AddForce(explodeDirection * 4000f);
+            speed = 4f;
+        }
     }
 
     public void ResetPosition() {
