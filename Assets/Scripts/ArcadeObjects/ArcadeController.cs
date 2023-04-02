@@ -38,11 +38,11 @@ public class ArcadeController : MonoBehaviour
 
         posY = racer.position.y;
 
-        if (posY > 4.5) {
-            transform.position = new Vector3(racer.position.x, 4.5f, 50);
+        if (posY > 5.5) {
+            transform.position = new Vector3(racer.position.x, 5.5f, 50);
         }
-        else if (posY < -4.5) {
-            transform.position = new Vector3(racer.position.x, -4.5f, 50);
+        else if (posY < -5.5) {
+            transform.position = new Vector3(racer.position.x, -5.5f, 50);
         }
 
 
