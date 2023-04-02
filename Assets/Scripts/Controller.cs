@@ -11,8 +11,21 @@ public class Controller : MonoBehaviour
     Vector2 formermove;
     public Vector2 velocity;
     public float speed;
+    //float formerangle;
 
-    float formerangle;
+
+    public float MaxSpinTime = 0.4f;
+  
+    
+    private float formerangle = 0f;
+    private bool isSpinning = false;
+    private float spinTime = 0f;
+  
+
+
+
+
+
 
     void Start()
     {
@@ -23,23 +36,39 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-        move.x = Joystick.Horizontal;
-        move.y = Joystick.Vertical;
+        if (!isSpinning)
+        {
+            move.x = Joystick.Horizontal;
+            move.y = Joystick.Vertical;
 
-        float xAxis = move.x;
-        float yAxis = move.y;
-        float zAxis = Mathf.Atan2(xAxis,yAxis)*Mathf.Rad2Deg;
-        
-        
-        if(zAxis != 0){
-            transform.eulerAngles = new Vector3(0f,0f,-zAxis);
-            formerangle = zAxis;
-        }else{
-            transform.eulerAngles = new Vector3(0f,0f,-formerangle);
+            float xAxis = move.x;
+            float yAxis = move.y;
+            float zAxis = Mathf.Atan2(xAxis,yAxis)*Mathf.Rad2Deg;
+            
+            
+            if(zAxis != 0){
+                transform.eulerAngles = new Vector3(0f,0f,-zAxis);
+                formerangle = zAxis;
+            }else{
+                transform.eulerAngles = new Vector3(0f,0f,-formerangle);
+            }
         }
+        else
+        {
         
+            // Spin the car 360 degrees
+            transform.Rotate(0f, 0f, 360f * Time.deltaTime / MaxSpinTime);
 
+            // Update spin time and check if spin time has elapsed
+            spinTime += Time.deltaTime;
+            if (spinTime > MaxSpinTime)
+            {
+                isSpinning = false;
+
+            }
+        }
     }
+
 
     void FixedUpdate(){
         
@@ -88,12 +117,28 @@ public class Controller : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+       
+        
         if(collision.gameObject.tag == "Bouncer")
         {
             float bounce = 2f;
             velocity *= -bounce;
         }
+
+        if(collision.gameObject.tag == "Spinner")
+        {
+            float bounce = 2f;
+            velocity *= -bounce;
+    
+            isSpinning = true;
+            spinTime = 0f;
+
+        }
     }
+
+
+
+
 
     public void ResetPosition() {
         Vector2 zero = new Vector2(0,0);
