@@ -468,8 +468,8 @@ MonoBehaviour:
   Range: 6
   Target: {fileID: 2089107478}
   projectilePrefab: {fileID: 3782601083110088896, guid: ffe4c20464dbdb3458ab59377762c42e, type: 3}
-  Gun: {fileID: 0}
-  ShootingPoint: {fileID: 0}
+  Gun: {fileID: 2011721044}
+  ShootingPoint: {fileID: 220069502}
   FireRate: 0.8
   Force: 180
 --- !u!114 &390720285
@@ -880,8 +880,8 @@ MonoBehaviour:
   Range: 6
   Target: {fileID: 2089107478}
   projectilePrefab: {fileID: 4153662722514157340, guid: 786611e741f2f084da7064870310b931, type: 3}
-  Gun: {fileID: 0}
-  ShootingPoint: {fileID: 0}
+  Gun: {fileID: 145649085}
+  ShootingPoint: {fileID: 1472294153}
   FireRate: 0.8
   Force: 280
 --- !u!114 &515922582
@@ -2092,7 +2092,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2625,8 +2625,8 @@ MonoBehaviour:
   Range: 6
   Target: {fileID: 2089107478}
   projectilePrefab: {fileID: 4153662722514157340, guid: 786611e741f2f084da7064870310b931, type: 3}
-  Gun: {fileID: 0}
-  ShootingPoint: {fileID: 0}
+  Gun: {fileID: 1884589960}
+  ShootingPoint: {fileID: 1172027829}
   FireRate: 0.8
   Force: 280
 --- !u!4 &1851626262 stripped
