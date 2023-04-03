@@ -2,21 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnowballScript : MonoBehaviour
+public class ExplodingProjectileScript : MonoBehaviour
 {
-    public ParticleSystem Explosion;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public ParticleSystem Explosion;        // Variable Particle System to handle explosion
 
     // If collision, create explosion effect and then destroys itself
     void OnCollisionEnter2D(Collision2D Col)

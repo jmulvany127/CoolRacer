@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1635995366536661951}
   - component: {fileID: 8313242318686302620}
   - component: {fileID: 6791737657054492334}
-  - component: {fileID: 9109594375056377411}
   - component: {fileID: 6824125778063143066}
+  - component: {fileID: 4385697726441680356}
   m_Layer: 0
-  m_Name: snowball
+  m_Name: Snowball
   m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,23 +104,10 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &9109594375056377411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3782601083110088896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c4f2416d177c954aa912a54ae034484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Explosion: {fileID: 6555402192943895991, guid: 43108e6bc5e0bca499d063fcb47efcf4, type: 3}
 --- !u!58 &6824125778063143066
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -137,3 +124,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.67
+--- !u!114 &4385697726441680356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3782601083110088896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085b7f04b5f00f49bfeef3713053577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explosion: {fileID: 6555402192943895991, guid: 43108e6bc5e0bca499d063fcb47efcf4, type: 3}

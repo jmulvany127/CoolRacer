@@ -18,6 +18,7 @@ public class fireball_script : MonoBehaviour
         
     }
 
+    // If collision, create explosion effect and then destroys itself
     void OnCollisionEnter2D(Collision2D Col)
     {
         ParticleSystem explosionInstant = Instantiate( Explosion, this.transform.position, Quaternion.identity );

@@ -4,27 +4,26 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    public float Range;                 // Range
-    public Transform Target;
-    public GameObject projectilePrefab;
-    public GameObject gun;
-    public Transform shootPoint;
-    public float FireRate;
-    public float Force;
+    // Public Variables
+    public float Range;                     // Range of Turret
+    public Transform Target;                // Target of Turret
+    public GameObject projectilePrefab;     // Projectile of Turret
+    public GameObject Gun;                  // Turret's Gun that moves
+    public Transform ShootingPoint;            // Region where bullet comes from
+    public float FireRate;                  // Rate of fire of Turret
+    public float Force;                     // Force of the bullet
     
-    float nextTimeToFire = 0;
-    bool Detected = false;
-    Vector2 Direction;
-
-    void Start()
-    {
-
-    }
+    float nextTimeToFire = 0;               // Initializing next firing time
+    bool Detected = false;                  // Detection bool
+    Vector2 Direction;                      // Direction to shoot
 
     void Update()
     {
+        // Get position of target and calculate position in relation to Turret
         Vector2 targetPos = Target.position;
         Direction = targetPos - (Vector2)transform.position;
+
+        // Check if target is within range
         RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, Direction, Range);
         if (rayInfo)
         {
@@ -46,7 +45,10 @@ public class Turret : MonoBehaviour
 
         if (Detected)
         {
-            gun.transform.up = Direction;
+            // Faces Target
+            Gun.transform.up = Direction;
+
+            // Shoots at every given rate
             if(Time.time > nextTimeToFire)
             {
                 nextTimeToFire = Time.time + 1/FireRate;
@@ -55,9 +57,10 @@ public class Turret : MonoBehaviour
         }
     }
 
+    // Instantiates projectile and shoots towards Target
     void Shoot()
     {
-        GameObject projectileInstant = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+        GameObject projectileInstant = Instantiate(projectilePrefab, ShootingPoint.position, Quaternion.identity);
         projectileInstant.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
     }
 }

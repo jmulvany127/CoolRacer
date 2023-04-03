@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 604343524757132596}
   - component: {fileID: -4179316568544787384}
   - component: {fileID: 6940195945103299066}
-  - component: {fileID: -3006229309505102636}
+  - component: {fileID: 779756122388862676}
   m_Layer: 0
-  m_Name: fireball
+  m_Name: Fireball
   m_TagString: Explode
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,9 +104,9 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &6940195945103299066
 CircleCollider2D:
@@ -124,7 +124,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.77
---- !u!114 &-3006229309505102636
+--- !u!114 &779756122388862676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4153662722514157340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec06a931c086ec418c4b4b3b9e73c71, type: 3}
+  m_Script: {fileID: 11500000, guid: 1085b7f04b5f00f49bfeef3713053577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Explosion: {fileID: 923090825860473343, guid: 3ff3cc65563b24e4293c110a6491b40d, type: 3}
