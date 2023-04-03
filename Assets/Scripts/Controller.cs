@@ -18,9 +18,14 @@ public class Controller : MonoBehaviour
   
     
     private float formerangle = 0f;
-    private bool isSpinning = false;
-    private float spinTime = 0f;
-  
+    public bool isSpinning = false;
+    public float spinTime = 0f;
+
+
+    public bool keepBurning = false;
+    private float burnTime = 0f;
+    private float maxBurnTime = 1f;
+    [SerializeField] public Sprite [] CarSprites; // To hold different car sprites
 
 
 
@@ -65,6 +70,19 @@ public class Controller : MonoBehaviour
             {
                 isSpinning = false;
 
+            }
+        }
+
+        // Continue lava burning effect for 1s after collision exit
+        if (keepBurning) {
+
+            velocity *= 0.95f; // Matches the velocity during collision best
+            burnTime += Time.deltaTime;
+
+            if (burnTime > maxBurnTime) {
+                keepBurning = false;
+                GetComponent<SpriteRenderer>().sprite =  CarSprites[0];
+                burnTime = 0;
             }
         }
     }
