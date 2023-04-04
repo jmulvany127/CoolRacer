@@ -9,8 +9,12 @@ public class launchGame : MonoBehaviour
         SceneManager.LoadScene("ControllerScene"); 
     }
 
+    public void LoadMainMenuScene() {
+        SceneManager.LoadScene("mainmenu"); 
+    }
+
     public void LoadLoginScene() {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("loginScene"); 
     }
 
     public void LoadStatsScene() {
