@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Spike
-  - Bouncer
-  - Logic
-  - Timer
-  - Racer
-  - Snowball
-  - Explode
+  tags: []
   layers:
   - Default
   - TransparentFX
