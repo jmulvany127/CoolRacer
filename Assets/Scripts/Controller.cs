@@ -11,12 +11,10 @@ public class Controller : MonoBehaviour
     Vector2 formermove;
     public Vector2 velocity;
     public float speed;
-    //float formerangle;
 
-
+    
     public float MaxSpinTime = 0.4f;
   
-    
     private float formerangle = 0f;
     private bool isSpinning = false;
     private float spinTime = 0f;
@@ -36,8 +34,10 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
+        //if the race car is not being affected by a colliosn with a spinner movement and rotation is controlled by joystick
         if (!isSpinning)
         {
+
             move.x = Joystick.Horizontal;
             move.y = Joystick.Vertical;
 
@@ -53,14 +53,16 @@ public class Controller : MonoBehaviour
                 transform.eulerAngles = new Vector3(0f,0f,-formerangle);
             }
         }
+        //if spinner rotation has occured then spin teh ca 360 degrees over a period of max spin time
         else
         {
         
             // Spin the car 360 degrees
             transform.Rotate(0f, 0f, 360f * Time.deltaTime / MaxSpinTime);
 
-            // Update spin time and check if spin time has elapsed
+            // Update spin time 
             spinTime += Time.deltaTime;
+            // check if spin time has elapsed, if so set isSpinnin to false to return controll to user
             if (spinTime > MaxSpinTime)
             {
                 isSpinning = false;
@@ -125,6 +127,8 @@ public class Controller : MonoBehaviour
             velocity *= -bounce;
         }
 
+        //if spinner collsion has occurred then bounce the vehicle and spin it 360 degrees 
+        
         if(collision.gameObject.tag == "Spinner")
         {
             float bounce = 2f;
