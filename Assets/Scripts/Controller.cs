@@ -156,6 +156,20 @@ public class Controller : MonoBehaviour
             spinTime = 0f;
 
         }
+
+        if(collision.gameObject.tag == "Snowball")
+        {
+            speed = 0;      // If collision with SnowBall, slow down to 0
+        }
+
+        if(collision.gameObject.tag == "Explode")
+        {
+            // Creates a force based on projectile (Might Need Improvement)
+            Vector2 explodeDirection = racer.transform.position - collision.gameObject.transform.position;
+            racer.GetComponent<Rigidbody2D>().AddForce(explodeDirection * 4000f);
+            velocity *= 2f;
+            speed = 0;
+        }
     }
 
 
