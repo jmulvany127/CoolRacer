@@ -18,6 +18,6 @@ public class launchGame : MonoBehaviour
     }
 
     public void LoadStatsScene() {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("statsScene"); 
     }
 }
