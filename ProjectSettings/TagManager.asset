@@ -9,6 +9,8 @@ TagManager:
   - Logic
   - Timer
   - Racer
+  - email
+  - password
   layers:
   - Default
   - TransparentFX
