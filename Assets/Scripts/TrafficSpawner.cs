@@ -9,6 +9,8 @@ public class TrafficSpawner : MonoBehaviour
     public Coin MyCoin;
     public Truck MyTruck;
     public Cones MyCones;
+    public VTruck MyVTruck;
+
     // Declare & Initialise variables
     public float spawnRate = 5;
     public float timer = 0;
@@ -79,8 +81,8 @@ public class TrafficSpawner : MonoBehaviour
                     y = -3 + 3 * (2 * (lane % 2));
                     Cones NewCones = Instantiate(MyCones, new Vector3(18, y, 30), transform.rotation);
                 }
-                else{
-                    Traffic NewTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
+                else {
+                    VTruck NewVTruck = Instantiate(MyVTruck, new Vector3(10, 10, 30), transform.rotation);
                 }
             }
             timer = 0;
