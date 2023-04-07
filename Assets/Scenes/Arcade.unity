@@ -807,8 +807,10 @@ MonoBehaviour:
   next_type: 0
   coin_odd: 0
   truck_odd: 0
+  Vtruck_odd: 0
   truck_spawnTime: 0
   cones_spawnTime: 0
+  V_spawnTime: 0
   y: 0
   floor_range: 0
   top_range: 0

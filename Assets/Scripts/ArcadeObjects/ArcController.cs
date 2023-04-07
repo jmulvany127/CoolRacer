@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcadeController : MonoBehaviour
+public class ArcController : MonoBehaviour
 {
     
     public FixedJoystick Joystick;
