@@ -7,7 +7,7 @@ public class VTruckMove : MonoBehaviour
     public int end_zone;
     // Start is called before the first frame update
     public float Speed = 15f;
-    public float SpeedY = 8f;
+    public float SpeedY = 5f;
 
     public float Y;
 
