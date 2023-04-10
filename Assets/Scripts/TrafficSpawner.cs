@@ -11,13 +11,14 @@ public class TrafficSpawner : MonoBehaviour
     public Cones MyCones;
     public VTruck MyVTruck;
     public Diamond MyDiamond;
+    public ScoreMulti MyScoreMulti;
 
     // Declare & Initialise variables
     public float spawnRate = 5;
     public float timer = 0;
     public int lane = 0; 
     public int total_odd, traffic_odd, next_type = 0;
-    private int rewatd_type;
+    private int reward_type;
     public int coin_odd, truck_odd, Vtruck_odd;
     public int truck_spawnTime, cones_spawnTime, V_spawnTime;
     public float y;
@@ -79,11 +80,15 @@ public class TrafficSpawner : MonoBehaviour
                 Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
             }
             else if(next_type <= coin_odd){
-                // Spawn a reward item: 1/10 chance of a diamond
-                reward_type = Random.Range(0,10);
-                if(reward_type < 8){
+                // Spawn a reward item: 1/12 chance of a diamond
+                reward_type = Random.Range(0,13);
+                if(reward_type <= 8){
                     Coin newCoin = Instantiate(MyCoin, new Vector3(18, y, 30), transform.rotation);
-                } else {
+                }
+                else if (reward_type <= 11) {
+                    ScoreMulti newScoreMulti = Instantiate(MyScoreMulti, new Vector3(18, y, 30), transform.rotation);
+                }
+                else  {
                     Diamond newDiamond = Instantiate(MyDiamond, new Vector3(18, y, 30), transform.rotation);
                 }
             }
