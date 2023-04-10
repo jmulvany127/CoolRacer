@@ -77,7 +77,13 @@ public class TrafficSpawner : MonoBehaviour
                 Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
             }
             else if(next_type <= coin_odd){
-                Coin newCoin = Instantiate(MyCoin, new Vector3(18, y, 30), transform.rotation);
+                // Spawn a reward item: 1/10 chance of a diamond
+                reward_type = Random.Range(0,10);
+                if(reward_type < 8){
+                    Coin newCoin = Instantiate(MyCoin, new Vector3(18, y, 30), transform.rotation);
+                } else {
+                    Diamond newDiamond = Instantiate(MyDiamond, new Vector3(18, y, 30), transform.rotation);
+                }
             }
             else{
                 if(next_type <= truck_odd && Time.realtimeSinceStartup > truck_spawnTime){
