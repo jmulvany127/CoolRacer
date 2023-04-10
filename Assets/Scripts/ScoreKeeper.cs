@@ -29,9 +29,12 @@ public class ScoreKeeper : MonoBehaviour
         score += ((int)(200 * Time.deltaTime));
         shownScore.text = score.ToString();
     }
-    
+   
     public void CoinScore(){
         score += 100;
+    }
+    public void DiamondScore(){
+        score += 500;
     }
     public enum TimerFormats
     {

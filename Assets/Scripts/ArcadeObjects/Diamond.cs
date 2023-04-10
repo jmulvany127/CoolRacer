@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Diamond : MonoBehaviour
 {
     public Sprite sprite;
     private SpriteRenderer _spriteRenderer;
@@ -19,3 +19,4 @@ public class Coin : MonoBehaviour
     }
    
 }
+
