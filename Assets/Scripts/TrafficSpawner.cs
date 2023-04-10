@@ -9,28 +9,30 @@ public class TrafficSpawner : MonoBehaviour
     public Coin MyCoin;
     public Truck MyTruck;
     public Cones MyCones;
-    public Diamond MyDiamond;
+    public VTruck MyVTruck;
+
     // Declare & Initialise variables
     public float spawnRate = 5;
     public float timer = 0;
     public int lane = 0; 
     public int total_odd, traffic_odd, next_type = 0;
-    private int reward_type;
-    public int coin_odd, truck_odd;
-    public int truck_spawnTime, cones_spawnTime;
+    public int coin_odd, truck_odd, Vtruck_odd;
+    public int truck_spawnTime, cones_spawnTime, V_spawnTime;
     public float y;
     public float floor_range, top_range, diffOffset;
     // Start is called before the first frame update
     void Start()
     {
         // Set a rand var so that for say, 9/10 times, traffic will spawn. The other time a coin object will spawn.
-        total_odd = 20;
+        total_odd = 25;
+        Vtruck_odd = 5;
         traffic_odd = 11;
         coin_odd = 13;
         truck_odd = 17;
         // Spawn times
         truck_spawnTime = 30;
         cones_spawnTime = 60;
+        V_spawnTime = 55;
         // Set offset vars
         diffOffset = 0.03f;
         floor_range = 0.5f;
@@ -66,6 +68,11 @@ public class TrafficSpawner : MonoBehaviour
                 To give a sense of increased difficulty, these two objects, which are harder to navigate, due to there increased hitbox size, 
                 Will only spawn after a set duration of time, otherwise the default traffic object will spawn in its place.
             */
+            if(next_type <= Vtruck_odd && Time.realtimeSinceStartup > V_spawnTime){
+                VTruck NewVTruck = Instantiate(MyVTruck, new Vector3(12, 10, 30), transform.rotation);
+            }
+
+
             if(next_type <= traffic_odd){
                 Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
             }
@@ -87,8 +94,8 @@ public class TrafficSpawner : MonoBehaviour
                     y = -3 + 3 * (2 * (lane % 2));
                     Cones NewCones = Instantiate(MyCones, new Vector3(18, y, 30), transform.rotation);
                 }
-                else{
-                    Traffic NewTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
+                else {
+                    Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
                 }
             }
             timer = 0;

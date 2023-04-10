@@ -26,8 +26,8 @@ public class ScoreKeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score += ((int)(200 * Time.deltaTime));
-        shownScore.text = score.ToString();
+        score += ((int)(150 * Time.deltaTime));
+        shownScore.text = "Score: " + score.ToString();
     }
    
     public void CoinScore(){
