@@ -10,12 +10,14 @@ public class TrafficSpawner : MonoBehaviour
     public Truck MyTruck;
     public Cones MyCones;
     public VTruck MyVTruck;
+    public Diamond MyDiamond;
 
     // Declare & Initialise variables
     public float spawnRate = 5;
     public float timer = 0;
     public int lane = 0; 
     public int total_odd, traffic_odd, next_type = 0;
+    private int rewatd_type;
     public int coin_odd, truck_odd, Vtruck_odd;
     public int truck_spawnTime, cones_spawnTime, V_spawnTime;
     public float y;
