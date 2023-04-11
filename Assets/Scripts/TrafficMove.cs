@@ -11,11 +11,11 @@ public class TrafficMove : MonoBehaviour
     void Start()
     {
         end_zone = -20;
-        if(Time.realtimeSinceStartup > 250){
+        if(Time.timeSinceLevelLoad > 250){
             Speed = 30f;
         }
         else {
-            Speed += 0.1f * Time.realtimeSinceStartup;
+            Speed += 0.1f * Time.timeSinceLevelLoad;
         }
     }
 

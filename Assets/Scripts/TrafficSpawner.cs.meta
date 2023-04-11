@@ -3,7 +3,14 @@ guid: bf62682cd3027d846a84efbb44dc33f8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - MyTraffic: {instanceID: 0}
+  - MyCoin: {instanceID: 0}
+  - MyTruck: {instanceID: 0}
+  - MyCones: {instanceID: 0}
+  - MyVTruck: {instanceID: 0}
+  - MyDiamond: {instanceID: 0}
+  - MyTank: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

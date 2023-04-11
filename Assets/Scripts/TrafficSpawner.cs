@@ -11,13 +11,12 @@ public class TrafficSpawner : MonoBehaviour
     public Cones MyCones;
     public VTruck MyVTruck;
     public Diamond MyDiamond;
-
     // Declare & Initialise variables
     public float spawnRate = 5;
     public float timer = 0;
     public int lane = 0; 
     public int total_odd, traffic_odd, next_type = 0;
-    private int rewatd_type;
+    private int reward_type;
     public int coin_odd, truck_odd, Vtruck_odd;
     public int truck_spawnTime, cones_spawnTime, V_spawnTime;
     public float y;
@@ -70,9 +69,9 @@ public class TrafficSpawner : MonoBehaviour
                 To give a sense of increased difficulty, these two objects, which are harder to navigate, due to there increased hitbox size, 
                 Will only spawn after a set duration of time, otherwise the default traffic object will spawn in its place.
             */
-            if(next_type <= Vtruck_odd && Time.realtimeSinceStartup > V_spawnTime){
-                VTruck NewVTruck = Instantiate(MyVTruck, new Vector3(12, 10, 30), transform.rotation);
-            }
+            // if(next_type <= Vtruck_odd && Time.timeSinceLevelLoad > V_spawnTime){
+            //     VTruck NewVTruck = Instantiate(MyVTruck, new Vector3(12, 10, 30), transform.rotation);
+            // }
 
 
             if(next_type <= traffic_odd){
@@ -88,10 +87,10 @@ public class TrafficSpawner : MonoBehaviour
                 }
             }
             else{
-                if(next_type <= truck_odd && Time.realtimeSinceStartup > truck_spawnTime){
+                if(next_type <= truck_odd && Time.timeSinceLevelLoad > truck_spawnTime){
                     Truck newTruck = Instantiate(MyTruck, new Vector3(18, y, 30), transform.rotation);
                 }
-                else if(Time.realtimeSinceStartup > cones_spawnTime){
+                else if(Time.timeSinceLevelLoad > cones_spawnTime){
                     //Special case for Cones: since this object is two lanes wide, we need a bit of extra handling...
                     y = -3 + 3 * (2 * (lane % 2));
                     Cones NewCones = Instantiate(MyCones, new Vector3(18, y, 30), transform.rotation);

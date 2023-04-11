@@ -10,6 +10,7 @@ TagManager:
   - Timer
   - Racer
   - Traffic
+  - Explode
   layers:
   - Default
   - TransparentFX
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tank
+    uniqueID: 3516613931
     locked: 0
