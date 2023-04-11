@@ -17,6 +17,9 @@ public class TableScript : MonoBehaviour
     void Start()
     {
         // todo change so that the database field for each is used
+        
+        // FlowManager.Instance.email // for user email
+
         float dummy = 47f;
         mode1track1.text = dummy.ToString();
         mode1track2.text = dummy.ToString();
