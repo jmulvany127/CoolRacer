@@ -17,6 +17,8 @@ public class VTruckMove : MonoBehaviour
         Y = Random.Range(0, 2);
         if (Y == 0) {
             transform.position = new Vector3(transform.position.x, 10f, transform.position.z);
+            Vector3 newRotation = new Vector3(0, 0, 180);
+            transform.eulerAngles = newRotation;
         }
         else if (Y == 1) {
             transform.position = new Vector3(transform.position.x, -10f, transform.position.z);
