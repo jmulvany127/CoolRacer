@@ -170,6 +170,12 @@ public class Controller : MonoBehaviour
             velocity *= 2f;
             speed = 0;
         }
+        
+        if (collision.gameObject.tag == "Snowman") {
+            velocity *= -2f;
+            collision.gameObject.GetComponent<SpriteRenderer>().sprite = collision.gameObject.GetComponent<TwoHits>().hit;
+            Destroy(collision.gameObject.GetComponent<Collider2D>());
+        }
     }
 
 
