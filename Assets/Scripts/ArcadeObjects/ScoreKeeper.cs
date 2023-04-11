@@ -9,7 +9,7 @@ public class ScoreKeeper : MonoBehaviour
 
     public int multiplier = 1;
     public float timer = 0;
-    public float timeVal = 10;
+    public float timeVal = 5;
 
     [Header("Component")]
     public TextMeshProUGUI shownScore;

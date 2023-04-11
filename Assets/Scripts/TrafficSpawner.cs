@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrafficSpawner : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class TrafficSpawner : MonoBehaviour
     public Diamond MyDiamond;
     public ScoreMulti MyScoreMulti;
 
-    // Declare & Initialise variables
+    // Declare & Initialize variables
     public float spawnRate = 5;
     public float timer = 0;
     public int lane = 0; 
@@ -23,13 +24,16 @@ public class TrafficSpawner : MonoBehaviour
     public int truck_spawnTime, cones_spawnTime, V_spawnTime;
     public float y;
     public float floor_range, top_range, diffOffset;
+
+    public string Level1, Level2, Level3;
+
     // Start is called before the first frame update
     void Start()
     {
         // Set a rand var so that for say, 9/10 times, traffic will spawn. The other time a coin object will spawn.
         total_odd = 25;
         Vtruck_odd = 5;
-        traffic_odd = 11;
+        traffic_odd = 10;
         coin_odd = 13;
         truck_odd = 17;
         // Spawn times
@@ -71,41 +75,83 @@ public class TrafficSpawner : MonoBehaviour
                 To give a sense of increased difficulty, these two objects, which are harder to navigate, due to there increased hitbox size, 
                 Will only spawn after a set duration of time, otherwise the default traffic object will spawn in its place.
             */
-            if(next_type <= Vtruck_odd && Time.realtimeSinceStartup > V_spawnTime){
-                VTruck NewVTruck = Instantiate(MyVTruck, new Vector3(12, 10, 30), transform.rotation);
-            }
+            // if(next_type <= Vtruck_odd && Time.realtimeSinceStartup > V_spawnTime){
+            //     VTruck NewVTruck = Instantiate(MyVTruck, new Vector3(12, 10, 30), transform.rotation);
+            // }
+            Scene scene = SceneManager.GetActiveScene();
 
-
-            if(next_type <= traffic_odd){
-                Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
-            }
-            else if(next_type <= coin_odd){
-                // Spawn a reward item: 1/12 chance of a diamond
-                reward_type = Random.Range(0,13);
-                if(reward_type <= 8){
-                    Coin newCoin = Instantiate(MyCoin, new Vector3(18, y, 30), transform.rotation);
-                }
-                else if (reward_type <= 11) {
-                    ScoreMulti newScoreMulti = Instantiate(MyScoreMulti, new Vector3(18, y, 30), transform.rotation);
-                }
-                else  {
-                    Diamond newDiamond = Instantiate(MyDiamond, new Vector3(18, y, 30), transform.rotation);
-                }
-            }
-            else{
-                if(next_type <= truck_odd && Time.realtimeSinceStartup > truck_spawnTime){
-                    Truck newTruck = Instantiate(MyTruck, new Vector3(18, y, 30), transform.rotation);
-                }
-                else if(Time.realtimeSinceStartup > cones_spawnTime){
-                    //Special case for Cones: since this object is two lanes wide, we need a bit of extra handling...
-                    y = -3 + 3 * (2 * (lane % 2));
-                    Cones NewCones = Instantiate(MyCones, new Vector3(18, y, 30), transform.rotation);
-                }
-                else {
+            if (scene.name == Level1) {
+                if(next_type <= traffic_odd){
                     Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
                 }
+                else if(next_type <= coin_odd){
+                    // Spawn a reward item: 1/12 chance of a diamond
+                    reward_type = Random.Range(0,13);
+                    if(reward_type <= 8){
+                        Coin newCoin = Instantiate(MyCoin, new Vector3(18, y, 30), transform.rotation);
+                    }
+                    else if (reward_type <= 11) {
+                        ScoreMulti newScoreMulti = Instantiate(MyScoreMulti, new Vector3(18, y, 30), transform.rotation);
+                    }
+                    else  {
+                        Diamond newDiamond = Instantiate(MyDiamond, new Vector3(18, y, 30), transform.rotation);
+                    }
+                }
+                // else{
+                //     if(next_type <= truck_odd && Time.realtimeSinceStartup > truck_spawnTime){
+                //         Truck newTruck = Instantiate(MyTruck, new Vector3(18, y, 30), transform.rotation);
+                //     }
+                //     else if(Time.realtimeSinceStartup > cones_spawnTime){
+                //         //Special case for Cones: since this object is two lanes wide, we need a bit of extra handling...
+                //         y = -3 + 3 * (2 * (lane % 2));
+                //         Cones NewCones = Instantiate(MyCones, new Vector3(18, y, 30), transform.rotation);
+                //     }
+                //     else {
+                //         Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
+                //     }
+                // }
+                timer = 0;
             }
-            timer = 0;
+            else if (scene.name == Level2) {
+                if(next_type <= Vtruck_odd && Time.realtimeSinceStartup > V_spawnTime){
+                    VTruck NewVTruck = Instantiate(MyVTruck, new Vector3(12, 10, 30), transform.rotation);
+                }
+
+
+                if(next_type <= traffic_odd){
+                    Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
+                }
+                else if(next_type <= coin_odd){
+                    // Spawn a reward item: 1/12 chance of a diamond
+                    reward_type = Random.Range(0,13);
+                    if(reward_type <= 8){
+                        Coin newCoin = Instantiate(MyCoin, new Vector3(18, y, 30), transform.rotation);
+                    }
+                    else if (reward_type <= 11) {
+                        ScoreMulti newScoreMulti = Instantiate(MyScoreMulti, new Vector3(18, y, 30), transform.rotation);
+                    }
+                    else  {
+                        Diamond newDiamond = Instantiate(MyDiamond, new Vector3(18, y, 30), transform.rotation);
+                    }
+                }
+                else{
+                    if(next_type <= truck_odd && Time.realtimeSinceStartup > truck_spawnTime){
+                        Truck newTruck = Instantiate(MyTruck, new Vector3(18, y, 30), transform.rotation);
+                    }
+                    else if(Time.realtimeSinceStartup > cones_spawnTime){
+                        //Special case for Cones: since this object is two lanes wide, we need a bit of extra handling...
+                        y = -3 + 3 * (2 * (lane % 2));
+                        Cones NewCones = Instantiate(MyCones, new Vector3(18, y, 30), transform.rotation);
+                    }
+                    else {
+                        Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
+                    }
+                }
+                timer = 0;
+            }
+            else if (scene.name == Level3) {
+
+            }
         }
 
     }

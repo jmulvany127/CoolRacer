@@ -774,7 +774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1414715711}
-  - component: {fileID: 1414715710}
+  - component: {fileID: 1414715712}
   m_Layer: 0
   m_Name: TrafficManager
   m_TagString: Untagged
@@ -782,7 +782,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1414715710
+--- !u!4 &1414715711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414715709}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.78, y: -5.91, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1414715712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -801,7 +816,7 @@ MonoBehaviour:
   MyVTruck: {fileID: -7528238831703342865, guid: 7c7dd9f98e27dd84291b33a94bdd2cff, type: 3}
   MyDiamond: {fileID: 2628839163271724759, guid: 1fa46877fecf7de428f4d50d4d980938, type: 3}
   MyScoreMulti: {fileID: -4925586139144657547, guid: 61415bd80694aec4cb6c4da28e1fa341, type: 3}
-  spawnRate: 1
+  spawnRate: 5
   timer: 0
   lane: 0
   total_odd: 0
@@ -816,25 +831,10 @@ MonoBehaviour:
   y: 0
   floor_range: 0
   top_range: 0
-  diffOffset: 0.05
+  diffOffset: 0
   Level1: Arcade
   Level2: Arcade2
   Level3: Arcade3
---- !u!4 &1414715711
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414715709}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.78, y: -5.91, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1741764453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,10 +1041,6 @@ PrefabInstance:
     - target: {fileID: 2920387221207267951, guid: 074952f89305df147adcbe0b8ec736de, type: 3}
       propertyPath: m_Name
       value: ScoreKeeper
-      objectReference: {fileID: 0}
-    - target: {fileID: 5927765803755557326, guid: 074952f89305df147adcbe0b8ec736de, type: 3}
-      propertyPath: timeVal
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5927765803755557326, guid: 074952f89305df147adcbe0b8ec736de, type: 3}
       propertyPath: shownScore
