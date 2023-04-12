@@ -21,6 +21,10 @@ public class launchGame : MonoBehaviour
         SceneManager.LoadScene("statsScene"); 
     }
 
+    public void LoadSelTrackArcade() {
+        SceneManager.LoadScene("SelectTrackArcade"); 
+    }
+
     public void LoadModeScene() {
         SceneManager.LoadScene("SelectModeScene"); 
     }
