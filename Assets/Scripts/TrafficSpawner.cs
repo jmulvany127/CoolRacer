@@ -97,6 +97,9 @@ public class TrafficSpawner : MonoBehaviour
                         Diamond newDiamond = Instantiate(MyDiamond, new Vector3(18, y, 30), transform.rotation);
                     }
                 }
+                else {
+                    Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
+                }
                 // else{
                 //     if(next_type <= truck_odd && Time.realtimeSinceStartup > truck_spawnTime){
                 //         Truck newTruck = Instantiate(MyTruck, new Vector3(18, y, 30), transform.rotation);
