@@ -32,11 +32,13 @@ public class FlowManager : MonoBehaviour
     }
 
     public void setModeArcade() {
+        Debug.Log("arcade");
         Instance.Arcade = true;
         Instance.TimeTrial = false;
     }
 
     public void setModeTimeTrial() {
+        Debug.Log("time trial");
         Instance.Arcade = false;
         Instance.TimeTrial = true;
     }

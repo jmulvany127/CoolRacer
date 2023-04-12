@@ -20,4 +20,8 @@ public class launchGame : MonoBehaviour
     public void LoadStatsScene() {
         SceneManager.LoadScene("statsScene"); 
     }
+
+    public void LoadModeScene() {
+        SceneManager.LoadScene("SelectModeScene"); 
+    }
 }
