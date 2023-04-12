@@ -25,6 +25,10 @@ public class launchGame : MonoBehaviour
         SceneManager.LoadScene("SelectTrackArcade"); 
     }
 
+    public void LoadSelTrackTimeTrial() {
+        SceneManager.LoadScene("track_menu_1"); 
+    }
+
     public void LoadModeScene() {
         SceneManager.LoadScene("SelectModeScene"); 
     }

@@ -2204,7 +2204,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 982525392}
         m_TargetAssemblyTypeName: launchGame, Assembly-CSharp
-        m_MethodName: LoadLapScene
+        m_MethodName: LoadSelTrackTimeTrial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
