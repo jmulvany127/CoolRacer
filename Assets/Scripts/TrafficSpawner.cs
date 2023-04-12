@@ -80,7 +80,43 @@ public class TrafficSpawner : MonoBehaviour
             // }
             Scene scene = SceneManager.GetActiveScene();
 
-            if (scene.name == Level1 || scene.name == Level3) {
+            // Special Objects for Level2
+            if (scene.name == Level2) {
+                if(next_type <= Vtruck_odd && Time.timeSinceLevelLoad > V_spawnTime){
+                    VTruck NewVTruck = Instantiate(MyVTruck, new Vector3(12, 10, 30), transform.rotation);
+                }
+                if(next_type <= traffic_odd){
+                    Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
+                }
+                else if(next_type <= coin_odd){
+                    // Spawn a reward item: 1/12 chance of a diamond
+                    reward_type = Random.Range(0,13);
+                    if(reward_type <= 8){
+                        Coin newCoin = Instantiate(MyCoin, new Vector3(18, y, 30), transform.rotation);
+                    }
+                    else if (reward_type <= 11) {
+                        ScoreMulti newScoreMulti = Instantiate(MyScoreMulti, new Vector3(18, y, 30), transform.rotation);
+                    }
+                    else  {
+                        Diamond newDiamond = Instantiate(MyDiamond, new Vector3(18, y, 30), transform.rotation);
+                    }
+                }
+                else{
+                    if(next_type <= truck_odd && Time.timeSinceLevelLoad > truck_spawnTime){
+                        Truck newTruck = Instantiate(MyTruck, new Vector3(18, y, 30), transform.rotation);
+                    }
+                    else if(Time.timeSinceLevelLoad > cones_spawnTime){
+                        //Special case for Cones: since this object is two lanes wide, we need a bit of extra handling...
+                        y = -3 + 3 * (2 * (lane % 2));
+                        Cones NewCones = Instantiate(MyCones, new Vector3(18, y, 30), transform.rotation);
+                    }
+                    else {
+                        Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
+                    }
+                }
+                timer = 0;
+            }
+            else {
                 if(next_type <= traffic_odd){
                     Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
                 }
@@ -115,43 +151,7 @@ public class TrafficSpawner : MonoBehaviour
                 // }
                 timer = 0;
             }
-            else if (scene.name == Level2) {
-                if(next_type <= Vtruck_odd && Time.realtimeSinceStartup > V_spawnTime){
-                    VTruck NewVTruck = Instantiate(MyVTruck, new Vector3(12, 10, 30), transform.rotation);
-                }
-
-
-                if(next_type <= traffic_odd){
-                    Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
-                }
-                else if(next_type <= coin_odd){
-                    // Spawn a reward item: 1/12 chance of a diamond
-                    reward_type = Random.Range(0,13);
-                    if(reward_type <= 8){
-                        Coin newCoin = Instantiate(MyCoin, new Vector3(18, y, 30), transform.rotation);
-                    }
-                    else if (reward_type <= 11) {
-                        ScoreMulti newScoreMulti = Instantiate(MyScoreMulti, new Vector3(18, y, 30), transform.rotation);
-                    }
-                    else  {
-                        Diamond newDiamond = Instantiate(MyDiamond, new Vector3(18, y, 30), transform.rotation);
-                    }
-                }
-                else{
-                    if(next_type <= truck_odd && Time.realtimeSinceStartup > truck_spawnTime){
-                        Truck newTruck = Instantiate(MyTruck, new Vector3(18, y, 30), transform.rotation);
-                    }
-                    else if(Time.realtimeSinceStartup > cones_spawnTime){
-                        //Special case for Cones: since this object is two lanes wide, we need a bit of extra handling...
-                        y = -3 + 3 * (2 * (lane % 2));
-                        Cones NewCones = Instantiate(MyCones, new Vector3(18, y, 30), transform.rotation);
-                    }
-                    else {
-                        Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
-                    }
-                }
-                timer = 0;
-            }
+            
         }
 
     }
