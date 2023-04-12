@@ -12,8 +12,13 @@ public class LoginScript : MonoBehaviour
     public TMP_InputField input_password;
     private FirebaseAuth auth;
 
+    private string user_email;
+    private string user_password;
+
     void Start()
     {
+        user_email = "*";
+        user_password = "*";
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
             FirebaseApp.Create();
             InitializeFirebaseAuth();
@@ -27,9 +32,14 @@ public class LoginScript : MonoBehaviour
 
     public void BeginLogIn()
     {
-        string email = input_email.text;
-        string password = input_password.text;
-        SignInWithEmailAndPassword(email, password);
+        string email = user_email;
+        string password = user_password;
+        if (email.Equals("*") || password.Equals("*")) {
+            Debug.Log("not logging in");
+        } else {
+            Debug.Log("logging in");
+            SignInWithEmailAndPassword(email, password);
+        }
     }
 
     void SignInWithEmailAndPassword(string email, string password)
@@ -54,13 +64,19 @@ public class LoginScript : MonoBehaviour
     public void onEndEditEmail()
     {
         Debug.Log("EMAIL " + input_email.text);
+        user_email = input_email.text;
     }
 
     public void onRegisterSelect()
     {
-        string email = input_email.text;
-        string password = input_password.text;
-        RegisterWithEmailAndPassword(email, password);
+        string email = user_email;
+        string password = user_password;
+        if (email.Equals("*") || password.Equals("*")) {
+            Debug.Log("not registering");
+        } else {
+            Debug.Log("registering");
+            RegisterWithEmailAndPassword(email, password);
+        }
     }
 
     void RegisterWithEmailAndPassword(string email, string password)
@@ -84,6 +100,7 @@ public class LoginScript : MonoBehaviour
 
     public void onEndEditPassword()
     {
+        user_password = input_password.text;
         Debug.Log("PASSWORD " + input_password.text);
     }
 }
