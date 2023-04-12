@@ -7,6 +7,10 @@ public class ScoreKeeper : MonoBehaviour
 {
     public int score;
 
+    public int multiplier = 1;
+    public float timer = 0;
+    public float timeVal = 5;
+
     [Header("Component")]
     public TextMeshProUGUI shownScore;
 
@@ -26,15 +30,30 @@ public class ScoreKeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score += ((int)(150 * Time.deltaTime));
+        //Score multiplier
+        if (timer > 0) {
+            multiplier = 2;
+            timer -= Time.deltaTime;
+            shownScore.color = Color.red;
+        }
+        else {
+            multiplier = 1;
+            timer = 0;
+            shownScore.color = Color.white;
+        }
+
+        score += ((int)(150 * Time.deltaTime * multiplier));
         shownScore.text = "Score: " + score.ToString();
     }
    
     public void CoinScore(){
-        score += 100;
+        score += (100*multiplier);
     }
     public void DiamondScore(){
-        score += 500;
+        score += (500*multiplier);
+    }
+    public void ScoreMulti() {
+        timer += timeVal;
     }
     public enum TimerFormats
     {
