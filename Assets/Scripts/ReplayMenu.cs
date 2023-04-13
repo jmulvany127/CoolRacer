@@ -8,6 +8,7 @@ public class ReplayMenu : MonoBehaviour
     public score logic;
     public Timer time;
     public Controller car;
+    public SaveHighscore UpdateSave;
 
 
     public GameObject replayMenu;
@@ -17,6 +18,7 @@ public class ReplayMenu : MonoBehaviour
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<score>();
         time = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
         car = GameObject.FindGameObjectWithTag("Racer").GetComponent<Controller>();
+        UpdateSave = GameObject.FindGameObjectWithTag("UpdateSave").GetComponent<SaveHighscore>();
     }
 
     // Update is called once per frame
@@ -42,8 +44,18 @@ public class ReplayMenu : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.name == "Racer") {
+            if(FlowManager.Instance.Track <= 3){
+                UpdateSave.currentTime = time.ClearTimer();
+                //UpdateSave.currentScore = 0;        //UPDATE WHEN SCOREKEEPER IMPLEMENTED
+            }
+            else if(FlowManager.Instance.Track > 3){
+                UpdateSave.currentTime = 0;
+                //UpdateSave.currentScore = score;        //UPDATE WHEN SCOREKEEPER IMPLEMENTED
+            }
             Time.timeScale = 0f;
             time.continue_inc = false;
+            UpdateSave.usernameToGet = FlowManager.Instance.email;
+            UpdateSave.UpdateDatabase();
             replayMenu.SetActive(true);
         } 
     }
