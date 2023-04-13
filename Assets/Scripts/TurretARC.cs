@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Turret : MonoBehaviour
+
+public class TurretARC : MonoBehaviour
 {
     // Public Variables
     public float Range;                     // Range of Turret
@@ -11,10 +12,11 @@ public class Turret : MonoBehaviour
     public Transform ShootingPoint;            // Region where bullet comes from
     public float FireRate;                  // Rate of fire of Turret
     public float Force;                     // Force of the bullet
-    
+    private float begin = 5;
     float nextTimeToFire = 0;               // Initializing next firing time
-    bool Detected = false;                  // Detection bool
     Vector2 Direction;                      // Direction to shoot
+    public ParticleSystem Explosion;        // Explosion when firing shell.
+
     void Update()
     {
         // Get position of target and calculate position in relation to Turret
@@ -24,41 +26,23 @@ public class Turret : MonoBehaviour
         RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, Direction, Range);
         if (rayInfo)
         {
-            if(rayInfo.collider.gameObject.tag == "Racer")
-            {
-                if (Detected == false)
-                {
-                    Detected = true;
-                }
-            }
-            else
-            {
-                if (Detected == true)
-                {
-                    Detected = false;
-                }
-            }
-        }
-        else
-        {
-            Detected = false; // Target is out of range, stop firing.   
-        }
-        if (Detected)
-        {
             // Faces Target
-            Gun.transform.up = Direction;
+            Gun.transform.right = Direction;
+
             // Shoots at every given rate
-            if(Time.time > nextTimeToFire)
+            if(Time.time > nextTimeToFire && Time.timeSinceLevelLoad > begin)
             {
                 nextTimeToFire = Time.time + 1/FireRate;
                 Shoot();
             }
         }
     }
+
     // Instantiates projectile and shoots towards Target
     void Shoot()
     {
-        GameObject projectileInstant = Instantiate(projectilePrefab, ShootingPoint.position, Quaternion.identity);
+        GameObject projectileInstant = Instantiate(projectilePrefab, ShootingPoint.position, Gun.transform.rotation);
+        ParticleSystem explosionInstant = Instantiate(Explosion, ShootingPoint.position, Quaternion.identity);
         projectileInstant.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
     }
 }

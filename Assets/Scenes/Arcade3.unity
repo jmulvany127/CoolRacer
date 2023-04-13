@@ -382,7 +382,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -778353365
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bf0ecda3e394e6c4ab438b50b6f129cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -900,6 +900,7 @@ GameObject:
   - component: {fileID: 1174804714}
   - component: {fileID: 1174804713}
   - component: {fileID: 1174804718}
+  - component: {fileID: 1174804720}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -960,7 +961,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -778353365
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 61ecf3ae173ccf049875605615b5a6ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1006,7 +1007,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174804712}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be522f52aed98c647b76b1ef51574ed6, type: 3}
   m_Name: 
@@ -1018,7 +1019,6 @@ MonoBehaviour:
   ShootingPoint: {fileID: 434958569}
   FireRate: 0.5
   Force: 20
-  Explosion: {fileID: 7550579063218632530, guid: 9801b049fd0681e4cac4bc2d729744a9, type: 3}
 --- !u!50 &1174804718
 Rigidbody2D:
   serializedVersion: 4
@@ -1061,6 +1061,26 @@ RectTransform:
   m_AnchoredPosition: {x: -10.89, y: -0.54}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.51085776, y: 0.6067679}
+--- !u!114 &1174804720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174804712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff30399250786e4ba3001723d986ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 20
+  Target: {fileID: 1741764455}
+  projectilePrefab: {fileID: 4153662722514157340, guid: 786611e741f2f084da7064870310b931, type: 3}
+  Gun: {fileID: 317932829}
+  ShootingPoint: {fileID: 434958569}
+  FireRate: 0.5
+  Force: 20
+  Explosion: {fileID: 923090825860473343, guid: 3ff3cc65563b24e4293c110a6491b40d, type: 3}
 --- !u!1 &1414715709
 GameObject:
   m_ObjectHideFlags: 0
