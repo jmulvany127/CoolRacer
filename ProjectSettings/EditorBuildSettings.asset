@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/track_menu_1.unity
     guid: 767450b29c8c5d34e9e6dd5ad24f5aa5
   - enabled: 1
-    path: Assets/Scenes/ControllerScene.unity
+    path: Assets/Scenes/testingScene.unity
     guid: 6ff99b80d01cd914290dee4ca245f235
   - enabled: 1
     path: Assets/Scenes/loginScene.unity
@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level2.unity
     guid: 3a6b6f6abf591d447b6c5b268121396e
+  - enabled: 1
+    path: Assets/Scenes/ControllerScene.unity
+    guid: 7c70327e2bcdc54418c3efb72c85fbab
   m_configObjects: {}

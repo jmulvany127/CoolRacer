@@ -28,8 +28,10 @@ public class ReplayMenu : MonoBehaviour
     public void RestartGame() {
           
         Time.timeScale = 1f;
+        // float recordedScore = time.ClearTimer();
+        // logic.updateScore(recordedScore);
         float recordedScore = time.ClearTimer();
-        logic.updateScore(recordedScore);
+        time.continue_inc = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -39,7 +41,10 @@ public class ReplayMenu : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        replayMenu.SetActive(true);
-        Time.timeScale = 0f;
+        if (other.gameObject.name == "Racer") {
+            Time.timeScale = 0f;
+            time.continue_inc = false;
+            replayMenu.SetActive(true);
+        } 
     }
 }

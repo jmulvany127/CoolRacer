@@ -5,6 +5,8 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    public bool continue_inc;
+
     [Header("Component")]
     public TextMeshProUGUI timerText;
 
@@ -22,6 +24,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        continue_inc = true;
         timerFormats.Add(TimerFormats.Whole, "0");
         timerFormats.Add(TimerFormats.TenthDecimal, "0.0");
         timerFormats.Add(TimerFormats.HundredthsDecimal, "0.00");
@@ -30,15 +33,17 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTime += Time.deltaTime;
-        if(hasLimit && currentTime <= timerLimit)
-        {
-            currentTime = timerLimit;
+        if (continue_inc) {
+            currentTime += Time.deltaTime;
+            if(hasLimit && currentTime <= timerLimit)
+            {
+                currentTime = timerLimit;
+                SetTimerText();
+                timerText.color = Color.red;
+                enabled = false;
+            }
             SetTimerText();
-            timerText.color = Color.red;
-            enabled = false;
         }
-        SetTimerText();
     }
 
     public void SetTimerText()
