@@ -4063,7 +4063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: 0
-  shownScore: {fileID: 0}
+  shownScore: {fileID: 659101442}
 --- !u!4 &1299427234
 Transform:
   m_ObjectHideFlags: 0
