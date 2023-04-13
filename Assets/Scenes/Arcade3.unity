@@ -764,8 +764,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.81, y: 0.00060586}
-  m_SizeDelta: {x: 886.57, y: 400}
+  m_AnchoredPosition: {x: -3.64, y: 0.00060586}
+  m_SizeDelta: {x: 788.19, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076946663
 MonoBehaviour:
@@ -986,7 +986,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.09}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1018,6 +1018,7 @@ MonoBehaviour:
   ShootingPoint: {fileID: 434958569}
   FireRate: 0.5
   Force: 20
+  Explosion: {fileID: 7550579063218632530, guid: 9801b049fd0681e4cac4bc2d729744a9, type: 3}
 --- !u!50 &1174804718
 Rigidbody2D:
   serializedVersion: 4
@@ -1090,7 +1091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyTraffic: {fileID: -8848967555299636128, guid: afbbc52daee3e254dbd304edbe291219, type: 3}
-  MyBike: {fileID: 0}
+  MyBike: {fileID: 6659524870313991798, guid: 27885f3fe457d5f4188cf63f70ec818e, type: 3}
   MyCoin: {fileID: 7003498940383819626, guid: 31ea571816f3f374b8b6950ff07ea8fc, type: 3}
   MyTruck: {fileID: 2919693378559253772, guid: 8ffb1f7bc6340c949a4b28e5a4ee1e87, type: 3}
   MyCones: {fileID: 906500912407216520, guid: 865969b227a7999428f39cb7992d29b7, type: 3}

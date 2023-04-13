@@ -15,6 +15,7 @@ public class Turret : MonoBehaviour
     private float begin = 5;
     float nextTimeToFire = 0;               // Initializing next firing time
     Vector2 Direction;                      // Direction to shoot
+    public ParticleSystem Explosion;        // Explosion when firing shell.
 
     void Update()
     {
@@ -41,6 +42,7 @@ public class Turret : MonoBehaviour
     void Shoot()
     {
         GameObject projectileInstant = Instantiate(projectilePrefab, ShootingPoint.position, Gun.transform.rotation);
+        ParticleSystem explosionInstant = Instantiate(Explosion, ShootingPoint.position, Quaternion.identity);
         projectileInstant.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
     }
 }

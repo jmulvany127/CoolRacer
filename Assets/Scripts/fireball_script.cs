@@ -19,6 +19,5 @@ public class fireball_script : MonoBehaviour
             Destroy(this.gameObject);
             Destroy(other.gameObject);
         }
-        
     }
 }

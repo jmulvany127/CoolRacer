@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MotorBike : MonoBehaviour
 {
-    public Sprite[] sprites;
+    public Sprite sprite;
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody;
 
@@ -21,16 +21,7 @@ public class MotorBike : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == Level1) {
-            _spriteRenderer.sprite = sprites[Random.Range(0, 2)];        
-        }
-        else if (scene.name == Level2) {
-            _spriteRenderer.sprite = sprites[Random.Range(2, 5)];        
-        }
-        else if (scene.name == Level3) {
-            _spriteRenderer.sprite = sprites[Random.Range(5, 8)];        
-        }
+        _spriteRenderer.sprite = sprite;       
     }
 
     void OnTriggerEnter2D(Collider2D other){
