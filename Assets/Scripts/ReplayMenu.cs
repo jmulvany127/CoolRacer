@@ -54,9 +54,9 @@ public class ReplayMenu : MonoBehaviour
             }
             Time.timeScale = 0f;
             time.continue_inc = false;
-            replayMenu.SetActive(true);
             UpdateSave.usernameToGet = FlowManager.Instance.email;
             UpdateSave.UpdateDatabase();
+            replayMenu.SetActive(true);
         } 
     }
 }
