@@ -860,8 +860,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1282996765
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: de56503d31d7a5f449b4ea2d190db432, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5770,6 +5770,14 @@ PrefabInstance:
     - target: {fileID: 368242099440855754, guid: b98cbf833239fcd4fa462f38b930a810, type: 3}
       propertyPath: m_Name
       value: 'Checkpoint '
+      objectReference: {fileID: 0}
+    - target: {fileID: 368242099440855756, guid: b98cbf833239fcd4fa462f38b930a810, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 368242099440855756, guid: b98cbf833239fcd4fa462f38b930a810, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1271197777
       objectReference: {fileID: 0}
     - target: {fileID: 368242099440855757, guid: b98cbf833239fcd4fa462f38b930a810, type: 3}
       propertyPath: m_RootOrder
