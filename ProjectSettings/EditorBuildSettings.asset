@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ControllerScene.unity
     guid: 7c70327e2bcdc54418c3efb72c85fbab
+  - enabled: 1
+    path: Assets/Scenes/Arcade2.unity
+    guid: f6e18f75f46f4e444b86891e9f7b100e
+  - enabled: 1
+    path: Assets/Scenes/Arcade3.unity
+    guid: b0d28a3ecf7fa294d802c87a4e6793ba
   m_configObjects: {}
