@@ -1060,6 +1060,7 @@ MonoBehaviour:
   ShootingPoint: {fileID: 604922189}
   FireRate: 0.8
   Force: 150
+  Explosion: {fileID: 0}
 --- !u!1 &307717963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,6 +2551,7 @@ MonoBehaviour:
   ShootingPoint: {fileID: 1639695881}
   FireRate: 0.8
   Force: 150
+  Explosion: {fileID: 0}
 --- !u!1 &846843676 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5058406361700197098, guid: fbcef2c1139ec684f86ef11b1ff0331f, type: 3}
@@ -5583,6 +5585,7 @@ MonoBehaviour:
   ShootingPoint: {fileID: 307717964}
   FireRate: 0.8
   Force: 150
+  Explosion: {fileID: 0}
 --- !u!1 &1756513963
 GameObject:
   m_ObjectHideFlags: 0
@@ -5865,6 +5868,7 @@ MonoBehaviour:
   ShootingPoint: {fileID: 1656323756}
   FireRate: 0.8
   Force: 150
+  Explosion: {fileID: 0}
 --- !u!1001 &1819840265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6356,6 +6360,7 @@ MonoBehaviour:
   ShootingPoint: {fileID: 1945046161}
   FireRate: 0.8
   Force: 150
+  Explosion: {fileID: 0}
 --- !u!4 &1941614343 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3539941480892244041, guid: 2a58548a88e01a944b89b221eade4572, type: 3}
@@ -6629,6 +6634,7 @@ GameObject:
   - component: {fileID: 2089107476}
   - component: {fileID: 2089107479}
   - component: {fileID: 2089107480}
+  - component: {fileID: 2089107481}
   m_Layer: 0
   m_Name: Racer
   m_TagString: Racer
@@ -6705,23 +6711,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089107475}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc7f1ce66e982b14a92c37e044be3f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Joystick: {fileID: 265664859}
-  velocity: {x: 0, y: 0}
   speed: 5
-  Fire: {fileID: 2284203121867177954, guid: 5f5efef44ccfe6140b7b5c9ce92069bf, type: 3}
-  MaxSpinTime: 0.4
-  isSpinning: 0
-  spinTime: 0
-  stopBurning: 1
-  keepBurning: 0
-  CarSprites:
-  - {fileID: 21300000, guid: de56503d31d7a5f449b4ea2d190db432, type: 3}
-  - {fileID: 21300000, guid: 550d19d880d6240459dd212e6f921643, type: 3}
 --- !u!212 &2089107480
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6774,6 +6770,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2089107481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089107475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031716315fbee154f8f063ce9a73d855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Joystick: {fileID: 265664859}
+  velocity: {x: 0, y: 0}
+  speed: 0
+  Fire: {fileID: 0}
+  MaxSpinTime: 0.4
+  isSpinning: 0
+  spinTime: 0
+  stopBurning: 1
+  keepBurning: 0
+  CarSprites: []
 --- !u!1001 &2110978570
 PrefabInstance:
   m_ObjectHideFlags: 0

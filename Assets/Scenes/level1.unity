@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logic: {fileID: 1299427233}
   time: {fileID: 0}
-  car: {fileID: 2089107479}
+  car: {fileID: 0}
 --- !u!4 &652086481
 Transform:
   m_ObjectHideFlags: 0
@@ -5668,6 +5668,7 @@ GameObject:
   - component: {fileID: 2089107477}
   - component: {fileID: 2089107476}
   - component: {fileID: 2089107479}
+  - component: {fileID: 2089107480}
   m_Layer: 0
   m_Name: Racer
   m_TagString: Racer
@@ -5745,21 +5746,35 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089107475}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc7f1ce66e982b14a92c37e044be3f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Joystick: {fileID: 1509345092}
-  velocity: {x: 0, y: 0}
   speed: 5
+--- !u!114 &2089107480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089107475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031716315fbee154f8f063ce9a73d855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Joystick: {fileID: 1509345092}
+  velocity: {x: 0, y: 0}
+  speed: 0
+  Fire: {fileID: 0}
   MaxSpinTime: 0.4
   isSpinning: 0
   spinTime: 0
+  stopBurning: 1
   keepBurning: 0
-  CarSprites:
-  - {fileID: 21300000, guid: de56503d31d7a5f449b4ea2d190db432, type: 3}
-  - {fileID: 21300000, guid: 550d19d880d6240459dd212e6f921643, type: 3}
+  CarSprites: []
 --- !u!1001 &368242100854982529
 PrefabInstance:
   m_ObjectHideFlags: 0
