@@ -22,6 +22,14 @@
         "com.google.firebase.app": "10.7.0"
       }
     },
+    "com.google.firebase.firestore": {
+      "version": "file:../GooglePackages/com.google.firebase.firestore-10.7.0.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.google.firebase.app": "10.7.0"
+      }
+    },
     "com.unity.collab-proxy": {
       "version": "2.0.1",
       "depth": 0,

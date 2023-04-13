@@ -19,7 +19,8 @@ public class LoginScript : MonoBehaviour
     {
         user_email = "*";
         user_password = "*";
-        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
+        {
             FirebaseApp.Create();
             InitializeFirebaseAuth();
         });
@@ -34,9 +35,12 @@ public class LoginScript : MonoBehaviour
     {
         string email = user_email;
         string password = user_password;
-        if (email.Equals("*") || password.Equals("*")) {
+        if (email.Equals("*") || password.Equals("*"))
+        {
             Debug.Log("not logging in");
-        } else {
+        }
+        else
+        {
             Debug.Log("logging in");
             SignInWithEmailAndPassword(email, password);
         }
@@ -44,7 +48,8 @@ public class LoginScript : MonoBehaviour
 
     void SignInWithEmailAndPassword(string email, string password)
     {
-        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
+        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+        {
             if (task.IsCanceled)
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");
@@ -65,23 +70,30 @@ public class LoginScript : MonoBehaviour
     {
         Debug.Log("EMAIL " + input_email.text);
         user_email = input_email.text;
+        CloudManager.Instance.username = user_email;
+        FlowManager.Instance.email = user_email;
     }
 
     public void onRegisterSelect()
     {
         string email = user_email;
         string password = user_password;
-        if (email.Equals("*") || password.Equals("*")) {
+        if (email.Equals("*") || password.Equals("*"))
+        {
             Debug.Log("not registering");
-        } else {
+        }
+        else
+        {
             Debug.Log("registering");
             RegisterWithEmailAndPassword(email, password);
         }
+        CloudManager.Instance.SaveData();
     }
 
     void RegisterWithEmailAndPassword(string email, string password)
     {
-        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
+        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+        {
             if (task.IsCanceled)
             {
                 Debug.LogError("CreateUserWithEmailAndPasswordAsync was canceled.");

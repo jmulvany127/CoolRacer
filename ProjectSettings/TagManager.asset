@@ -12,6 +12,10 @@ TagManager:
   - email
   - password
   - Spinner
+  - Snowball
+  - Explode
+  - Snowman
+  - UpdateSave
   layers:
   - Default
   - TransparentFX
