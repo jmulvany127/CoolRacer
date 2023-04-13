@@ -12,14 +12,14 @@ public class Controller : MonoBehaviour
     public Vector2 velocity;
     public float speed;
 
-    
+    public ParticleSystem Fire;
     public float MaxSpinTime = 0.4f;
   
     private float formerangle = 0f;
     public bool isSpinning = false;
     public float spinTime = 0f;
 
-
+    public bool stopBurning = true;
     public bool keepBurning = false;
     private float burnTime = 0f;
     private float maxBurnTime = 1f;
@@ -79,12 +79,13 @@ public class Controller : MonoBehaviour
         if (keepBurning) {
 
             velocity *= 0.95f; // Matches the velocity during collision best
-            burnTime += Time.deltaTime;
-
-            if (burnTime > maxBurnTime) {
-                keepBurning = false;
-                GetComponent<SpriteRenderer>().sprite =  CarSprites[0];
-                burnTime = 0;
+	        if(stopBurning) {
+                burnTime += Time.deltaTime;
+                if (burnTime > maxBurnTime) {
+                    keepBurning = false;
+                    //GetComponent<SpriteRenderer>().sprite =  CarSprites[0];
+                    burnTime = 0;
+                }
             }
         }
     }
@@ -164,6 +165,7 @@ public class Controller : MonoBehaviour
 
         if(collision.gameObject.tag == "Explode")
         {
+            keepBurning = true;
             // Creates a force based on projectile (Might Need Improvement)
             Vector2 explodeDirection = racer.transform.position - collision.gameObject.transform.position;
             racer.GetComponent<Rigidbody2D>().AddForce(explodeDirection * 4000f);
