@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Traffic : MonoBehaviour
 {
     public Sprite[] sprites;
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody;
+
+    public string Level1, Level2, Level3;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -17,7 +21,16 @@ public class Traffic : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        _spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];        
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == Level1) {
+            _spriteRenderer.sprite = sprites[Random.Range(0, 3)];        
+        }
+        else if (scene.name == Level2) {
+            _spriteRenderer.sprite = sprites[Random.Range(3, 6)];        
+        }
+        else if (scene.name == Level3) {
+            _spriteRenderer.sprite = sprites[Random.Range(6, 9)];        
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other){

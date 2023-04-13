@@ -1095,7 +1095,7 @@ MonoBehaviour:
   MyCones: {fileID: 906500912407216520, guid: 865969b227a7999428f39cb7992d29b7, type: 3}
   MyVTruck: {fileID: -7528238831703342865, guid: 7c7dd9f98e27dd84291b33a94bdd2cff, type: 3}
   MyDiamond: {fileID: 2628839163271724759, guid: 1fa46877fecf7de428f4d50d4d980938, type: 3}
-  MyScoreMulti: {fileID: 0}
+  MyScoreMulti: {fileID: -4925586139144657547, guid: 61415bd80694aec4cb6c4da28e1fa341, type: 3}
   spawnRate: 1
   timer: 0
   lane: 0
@@ -1112,9 +1112,9 @@ MonoBehaviour:
   floor_range: 0
   top_range: 0
   diffOffset: 0.05
-  Level1: 
-  Level2: 
-  Level3: 
+  Level1: Arcade
+  Level2: Arcade2
+  Level3: Arcade3
 --- !u!4 &1414715711
 Transform:
   m_ObjectHideFlags: 0
@@ -1420,11 +1420,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 82.6
+      value: 82.60004
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 82.7
+      value: 82.69998
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

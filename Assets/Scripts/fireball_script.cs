@@ -12,7 +12,7 @@ public class fireball_script : MonoBehaviour
         if(other.gameObject.name == "Racer"){
             ParticleSystem explosionInstant = Instantiate(Explosion, this.transform.position, Quaternion.identity );
             Destroy(this.gameObject);
-            SceneManager.LoadScene("Arcade");
+            SceneManager.LoadScene("Arcade3");
         }
         else if(other.gameObject.tag == "Traffic"){
             ParticleSystem explosionInstant = Instantiate(Explosion, this.transform.position, Quaternion.identity );
