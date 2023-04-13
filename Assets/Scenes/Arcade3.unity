@@ -335,7 +335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317932829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -708,11 +708,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 270
+      value: 268
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 101
+      value: 135.2
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -764,8 +764,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.25, y: 1.29}
-  m_SizeDelta: {x: 1168.5, y: 674.14}
+  m_AnchoredPosition: {x: 13.81, y: 0.00060586}
+  m_SizeDelta: {x: 886.57, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076946663
 MonoBehaviour:
@@ -1090,6 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyTraffic: {fileID: -8848967555299636128, guid: afbbc52daee3e254dbd304edbe291219, type: 3}
+  MyBike: {fileID: 0}
   MyCoin: {fileID: 7003498940383819626, guid: 31ea571816f3f374b8b6950ff07ea8fc, type: 3}
   MyTruck: {fileID: 2919693378559253772, guid: 8ffb1f7bc6340c949a4b28e5a4ee1e87, type: 3}
   MyCones: {fileID: 906500912407216520, guid: 865969b227a7999428f39cb7992d29b7, type: 3}

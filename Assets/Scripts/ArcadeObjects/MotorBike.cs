@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Traffic : MonoBehaviour
+public class MotorBike : MonoBehaviour
 {
     public Sprite[] sprites;
     private SpriteRenderer _spriteRenderer;
@@ -26,10 +26,10 @@ public class Traffic : MonoBehaviour
             _spriteRenderer.sprite = sprites[Random.Range(0, 2)];        
         }
         else if (scene.name == Level2) {
-            _spriteRenderer.sprite = sprites[Random.Range(2, 4)];        
+            _spriteRenderer.sprite = sprites[Random.Range(2, 5)];        
         }
         else if (scene.name == Level3) {
-            _spriteRenderer.sprite = sprites[Random.Range(4, 6)];        
+            _spriteRenderer.sprite = sprites[Random.Range(5, 8)];        
         }
     }
 

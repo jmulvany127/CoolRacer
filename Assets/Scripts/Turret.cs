@@ -40,7 +40,7 @@ public class Turret : MonoBehaviour
     // Instantiates projectile and shoots towards Target
     void Shoot()
     {
-        GameObject projectileInstant = Instantiate(projectilePrefab, ShootingPoint.position, transform.rotation);
+        GameObject projectileInstant = Instantiate(projectilePrefab, ShootingPoint.position, Gun.transform.rotation);
         projectileInstant.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
     }
 }

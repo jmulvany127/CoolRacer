@@ -587,11 +587,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 511
+      value: 367
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 196
+      value: 136
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -643,8 +643,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9873, y: 2.27}
-  m_SizeDelta: {x: 705.44, y: 391.22}
+  m_AnchoredPosition: {x: 7.4925, y: -2.29}
+  m_SizeDelta: {x: 470.98, y: 260.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076946663
 MonoBehaviour:
@@ -810,6 +810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyTraffic: {fileID: -8848967555299636128, guid: afbbc52daee3e254dbd304edbe291219, type: 3}
+  MyBike: {fileID: 0}
   MyCoin: {fileID: 7003498940383819626, guid: 31ea571816f3f374b8b6950ff07ea8fc, type: 3}
   MyTruck: {fileID: 2919693378559253772, guid: 8ffb1f7bc6340c949a4b28e5a4ee1e87, type: 3}
   MyCones: {fileID: 906500912407216520, guid: 865969b227a7999428f39cb7992d29b7, type: 3}

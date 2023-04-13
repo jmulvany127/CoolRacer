@@ -7,6 +7,7 @@ public class TrafficSpawner : MonoBehaviour
 {
     // Declare game objects
     public Traffic MyTraffic;
+    public MotorBike MyBike;
     public Coin MyCoin;
     public Truck MyTruck;
     public Cones MyCones;
@@ -134,7 +135,7 @@ public class TrafficSpawner : MonoBehaviour
                     }
                 }
                 else {
-                    Traffic newTraffic = Instantiate(MyTraffic, new Vector3(18, y, 30), transform.rotation);
+                    MotorBike newBike = Instantiate(MyBike, new Vector3(18, y, 30), transform.rotation);
                 }
                 // else{
                 //     if(next_type <= truck_odd && Time.realtimeSinceStartup > truck_spawnTime){
