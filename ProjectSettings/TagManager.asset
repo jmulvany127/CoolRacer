@@ -12,6 +12,9 @@ TagManager:
   - email
   - password
   - Spinner
+  - Snowman
+  - Snowball
+  - Explode
   layers:
   - Default
   - TransparentFX
@@ -48,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: car
+    uniqueID: 3011970531
     locked: 0
