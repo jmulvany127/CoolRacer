@@ -176,7 +176,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.537771
+  orthographic size: 8.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -455,7 +455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036800, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_fontSize
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036800, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_margin.w
@@ -471,7 +471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036800, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_margin.z
-      value: 127.814445
+      value: 167.02997
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036800, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_fontStyle
@@ -479,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036800, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_fontSizeBase
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036800, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_enableAutoSizing
@@ -539,11 +539,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 543.29
+      value: 493.38
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 190.8
+      value: 175.35
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_LocalScale.x
@@ -587,11 +587,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 492
+      value: 511
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 280
+      value: 196
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -635,7 +635,7 @@ RectTransform:
   m_GameObject: {fileID: 1076946661}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.65, y: 1.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 129630850}
@@ -643,8 +643,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.17, y: 0.0010071}
-  m_SizeDelta: {x: 708.05, y: 350}
+  m_AnchoredPosition: {x: -1.9873, y: 2.27}
+  m_SizeDelta: {x: 705.44, y: 391.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076946663
 MonoBehaviour:
@@ -682,7 +682,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 10d33303ec0eb1f4fb1ec6031dda5ea8, type: 3}
+  m_Texture: {fileID: 2800000, guid: a69628abebd654e4099f3ead280fc8bc, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
