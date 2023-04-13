@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c105dd021834d40bdf4042284dd5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
-  currentTime: 0
+  timerText: {fileID: 1891080520757206716, guid: c42d8d52d7bbfd344b4b90e3e681cdd8, type: 3}
   hasLimit: 0
   timerLimit: 90
   hasFormat: 1

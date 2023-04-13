@@ -42,6 +42,10 @@ public class Turret : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            Detected = false; // Target is out of range, stop firing.   
+        }
 
         if (Detected)
         {
