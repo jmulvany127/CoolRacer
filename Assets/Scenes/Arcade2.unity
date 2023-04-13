@@ -455,7 +455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036800, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036800, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_margin.w
@@ -479,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036800, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036800, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_enableAutoSizing
@@ -587,11 +587,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 367
+      value: 339
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 136
+      value: 114
       objectReference: {fileID: 0}
     - target: {fileID: 4107259745655036803, guid: 9412d781b41d12e40b6f835332292d3c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -810,7 +810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyTraffic: {fileID: -8848967555299636128, guid: afbbc52daee3e254dbd304edbe291219, type: 3}
-  MyBike: {fileID: 0}
+  MyBike: {fileID: 6659524870313991798, guid: 27885f3fe457d5f4188cf63f70ec818e, type: 3}
   MyCoin: {fileID: 7003498940383819626, guid: 31ea571816f3f374b8b6950ff07ea8fc, type: 3}
   MyTruck: {fileID: 2919693378559253772, guid: 8ffb1f7bc6340c949a4b28e5a4ee1e87, type: 3}
   MyCones: {fileID: 906500912407216520, guid: 865969b227a7999428f39cb7992d29b7, type: 3}
