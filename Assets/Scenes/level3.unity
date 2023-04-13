@@ -1630,6 +1630,7 @@ MonoBehaviour:
   logic: {fileID: 0}
   time: {fileID: 0}
   car: {fileID: 0}
+  UpdateSave: {fileID: 0}
   replayMenu: {fileID: 1698365367}
 --- !u!1001 &572206665
 PrefabInstance:
@@ -6712,9 +6713,11 @@ MonoBehaviour:
   Joystick: {fileID: 265664859}
   velocity: {x: 0, y: 0}
   speed: 5
+  Fire: {fileID: 2284203121867177954, guid: 5f5efef44ccfe6140b7b5c9ce92069bf, type: 3}
   MaxSpinTime: 0.4
   isSpinning: 0
   spinTime: 0
+  stopBurning: 1
   keepBurning: 0
   CarSprites:
   - {fileID: 21300000, guid: de56503d31d7a5f449b4ea2d190db432, type: 3}
