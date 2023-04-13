@@ -11,6 +11,7 @@ TagManager:
   - Racer
   - email
   - password
+  - Spinner
   layers:
   - Default
   - TransparentFX

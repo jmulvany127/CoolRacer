@@ -12,7 +12,23 @@ public class Controller : MonoBehaviour
     public Vector2 velocity;
     public float speed;
 
-    float formerangle;
+    
+    public float MaxSpinTime = 0.4f;
+  
+    private float formerangle = 0f;
+    public bool isSpinning = false;
+    public float spinTime = 0f;
+
+
+    public bool keepBurning = false;
+    private float burnTime = 0f;
+    private float maxBurnTime = 1f;
+    [SerializeField] public Sprite [] CarSprites; // To hold different car sprites
+
+
+
+
+
 
     void Start()
     {
@@ -23,23 +39,56 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-        move.x = Joystick.Horizontal;
-        move.y = Joystick.Vertical;
+        //if the race car is not being affected by a colliosn with a spinner movement and rotation is controlled by joystick
+        if (!isSpinning)
+        {
 
-        float xAxis = move.x;
-        float yAxis = move.y;
-        float zAxis = Mathf.Atan2(xAxis,yAxis)*Mathf.Rad2Deg;
-        
-        
-        if(zAxis != 0){
-            transform.eulerAngles = new Vector3(0f,0f,-zAxis);
-            formerangle = zAxis;
-        }else{
-            transform.eulerAngles = new Vector3(0f,0f,-formerangle);
+            move.x = Joystick.Horizontal;
+            move.y = Joystick.Vertical;
+
+            float xAxis = move.x;
+            float yAxis = move.y;
+            float zAxis = Mathf.Atan2(xAxis,yAxis)*Mathf.Rad2Deg;
+            
+            
+            if(zAxis != 0){
+                transform.eulerAngles = new Vector3(0f,0f,-zAxis);
+                formerangle = zAxis;
+            }else{
+                transform.eulerAngles = new Vector3(0f,0f,-formerangle);
+            }
         }
+        //if spinner rotation has occured then spin teh ca 360 degrees over a period of max spin time
+        else
+        {
         
+            // Spin the car 360 degrees
+            transform.Rotate(0f, 0f, 360f * Time.deltaTime / MaxSpinTime);
 
+            // Update spin time 
+            spinTime += Time.deltaTime;
+            // check if spin time has elapsed, if so set isSpinnin to false to return controll to user
+            if (spinTime > MaxSpinTime)
+            {
+                isSpinning = false;
+
+            }
+        }
+
+        // Continue lava burning effect for 1s after collision exit
+        if (keepBurning) {
+
+            velocity *= 0.95f; // Matches the velocity during collision best
+            burnTime += Time.deltaTime;
+
+            if (burnTime > maxBurnTime) {
+                keepBurning = false;
+                GetComponent<SpriteRenderer>().sprite =  CarSprites[0];
+                burnTime = 0;
+            }
+        }
     }
+
 
     void FixedUpdate(){
         
@@ -88,12 +137,50 @@ public class Controller : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+       
+        
         if(collision.gameObject.tag == "Bouncer")
         {
             float bounce = 2f;
             velocity *= -bounce;
         }
+
+        //if spinner collsion has occurred then bounce the vehicle and spin it 360 degrees 
+        
+        if(collision.gameObject.tag == "Spinner")
+        {
+            float bounce = 2f;
+            velocity *= -bounce;
+    
+            isSpinning = true;
+            spinTime = 0f;
+
+        }
+
+        if(collision.gameObject.tag == "Snowball")
+        {
+            speed = 0;      // If collision with SnowBall, slow down to 0
+        }
+
+        if(collision.gameObject.tag == "Explode")
+        {
+            // Creates a force based on projectile (Might Need Improvement)
+            Vector2 explodeDirection = racer.transform.position - collision.gameObject.transform.position;
+            racer.GetComponent<Rigidbody2D>().AddForce(explodeDirection * 4000f);
+            velocity *= 2f;
+            speed = 0;
+        }
+        
+        if (collision.gameObject.tag == "Snowman") {
+            velocity *= -2f;
+            collision.gameObject.GetComponent<SpriteRenderer>().sprite = collision.gameObject.GetComponent<TwoHits>().hit;
+            Destroy(collision.gameObject.GetComponent<Collider2D>());
+        }
     }
+
+
+
+
 
     public void ResetPosition() {
         Vector2 zero = new Vector2(0,0);

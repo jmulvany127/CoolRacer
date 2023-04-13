@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Joystick Pack/Documentaion.pdf.meta
 guid: cfa813ed406827e43b967abd54ab5b9a
+========
+guid: 2cda990e2423bbf4892e6590ba056729
+>>>>>>>> one-lap-level-merge:Assets/Scenes/SampleScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
