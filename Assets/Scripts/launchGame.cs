@@ -22,7 +22,7 @@ public class launchGame : MonoBehaviour
     }
 
     public void LoadSelTrackArcade() {
-        SceneManager.LoadScene("SelectTrackArcade"); 
+        SceneManager.LoadScene("track_menu_1"); 
     }
 
     public void LoadSelTrackTimeTrial() {
@@ -46,11 +46,14 @@ public class launchGame : MonoBehaviour
             case 3:
                 SceneManager.LoadScene("level3"); 
                 break;
-            case 4://todo add arcade
+            case 4:
+                SceneManager.LoadScene("Arcade"); 
                 break;
             case 5:
+                SceneManager.LoadScene("Arcade2"); 
                 break;
             case 6:
+                SceneManager.LoadScene("Arcade3"); 
                 break;
             default:
                 break;

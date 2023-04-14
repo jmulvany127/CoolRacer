@@ -7,8 +7,9 @@ public class TrafficCollision : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.name == "Racer"){
-            string sceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(sceneName);
+            // string sceneName = SceneManager.GetActiveScene().name;
+            // SceneManager.LoadScene(sceneName);
+            FindObjectOfType<ReplayMenu>().collision();
         }
     }
 }

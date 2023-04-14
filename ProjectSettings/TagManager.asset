@@ -18,6 +18,7 @@ TagManager:
   - UpdateSave
   - Traffic
   - Explode
+  - replay
   layers:
   - Default
   - TransparentFX
