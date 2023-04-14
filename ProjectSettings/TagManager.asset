@@ -19,6 +19,8 @@ TagManager:
   - Traffic
   - Explode
   - replay
+  - track
+  - bound
   layers:
   - Default
   - TransparentFX
