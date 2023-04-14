@@ -1055,12 +1055,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 23
   Target: {fileID: 2089107478}
-  projectilePrefab: {fileID: 4153662722514157340, guid: 786611e741f2f084da7064870310b931, type: 3}
+  projectilePrefab: {fileID: 4153662722514157340, guid: 6ec33c26ff620af40b6739a9e1aa080c, type: 3}
   Gun: {fileID: 491297194}
   ShootingPoint: {fileID: 604922189}
   FireRate: 0.8
   Force: 150
-  Explosion: {fileID: 0}
 --- !u!1 &307717963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,12 +2545,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 20
   Target: {fileID: 2089107478}
-  projectilePrefab: {fileID: 4153662722514157340, guid: 786611e741f2f084da7064870310b931, type: 3}
+  projectilePrefab: {fileID: 4153662722514157340, guid: 6ec33c26ff620af40b6739a9e1aa080c, type: 3}
   Gun: {fileID: 1214165170}
   ShootingPoint: {fileID: 1639695881}
   FireRate: 0.8
   Force: 150
-  Explosion: {fileID: 0}
 --- !u!1 &846843676 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5058406361700197098, guid: fbcef2c1139ec684f86ef11b1ff0331f, type: 3}
@@ -5580,12 +5578,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 18
   Target: {fileID: 2089107478}
-  projectilePrefab: {fileID: 4153662722514157340, guid: 786611e741f2f084da7064870310b931, type: 3}
+  projectilePrefab: {fileID: 4153662722514157340, guid: 6ec33c26ff620af40b6739a9e1aa080c, type: 3}
   Gun: {fileID: 1294504284}
   ShootingPoint: {fileID: 307717964}
   FireRate: 0.8
   Force: 150
-  Explosion: {fileID: 0}
 --- !u!1 &1756513963
 GameObject:
   m_ObjectHideFlags: 0
@@ -5863,12 +5860,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 22
   Target: {fileID: 2089107478}
-  projectilePrefab: {fileID: 4153662722514157340, guid: 786611e741f2f084da7064870310b931, type: 3}
+  projectilePrefab: {fileID: 4153662722514157340, guid: 6ec33c26ff620af40b6739a9e1aa080c, type: 3}
   Gun: {fileID: 896169905}
   ShootingPoint: {fileID: 1656323756}
   FireRate: 0.8
   Force: 150
-  Explosion: {fileID: 0}
 --- !u!1001 &1819840265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6355,12 +6351,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 18
   Target: {fileID: 2089107478}
-  projectilePrefab: {fileID: 4153662722514157340, guid: 786611e741f2f084da7064870310b931, type: 3}
+  projectilePrefab: {fileID: 4153662722514157340, guid: 6ec33c26ff620af40b6739a9e1aa080c, type: 3}
   Gun: {fileID: 1281036131}
   ShootingPoint: {fileID: 1945046161}
   FireRate: 0.8
   Force: 150
-  Explosion: {fileID: 0}
 --- !u!4 &1941614343 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3539941480892244041, guid: 2a58548a88e01a944b89b221eade4572, type: 3}

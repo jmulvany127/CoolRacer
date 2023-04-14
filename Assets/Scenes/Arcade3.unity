@@ -1164,7 +1164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 20
   Target: {fileID: 1741764455}
-  projectilePrefab: {fileID: 4153662722514157340, guid: 786611e741f2f084da7064870310b931, type: 3}
+  projectilePrefab: {fileID: 4153662722514157340, guid: 33fead7cf1621b14f91a979dd677e109, type: 3}
   Gun: {fileID: 317932829}
   ShootingPoint: {fileID: 434958569}
   FireRate: 0.5
@@ -1225,7 +1225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 20
   Target: {fileID: 1741764455}
-  projectilePrefab: {fileID: 4153662722514157340, guid: 786611e741f2f084da7064870310b931, type: 3}
+  projectilePrefab: {fileID: 4153662722514157340, guid: 33fead7cf1621b14f91a979dd677e109, type: 3}
   Gun: {fileID: 317932829}
   ShootingPoint: {fileID: 434958569}
   FireRate: 0.5
