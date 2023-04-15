@@ -20,7 +20,7 @@ public class Lava : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.name == "Racer") {
-            other.gameObject.GetComponent<Controller>().keepBurning = true;
+            other.gameObject.GetComponent<Controller>().stopBurning = true;
         }
     }
 }

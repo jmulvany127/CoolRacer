@@ -77,6 +77,7 @@ public class Controller : MonoBehaviour
 
         // Continue lava burning effect for 1s after collision exit
         if (keepBurning) {
+            ParticleSystem FireInstant = Instantiate(Fire, this.transform.position, Quaternion.identity);
 
             velocity *= 0.95f; // Matches the velocity during collision best
 	        if(stopBurning) {
@@ -181,6 +182,17 @@ public class Controller : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "Explode")
+        {
+            keepBurning = true;
+            // Creates a force based on projectile (Might Need Improvement)
+            Vector2 explodeDirection = racer.transform.position - other.gameObject.transform.position;
+            racer.GetComponent<Rigidbody2D>().AddForce(explodeDirection * 4000f);
+            velocity *= 2f;
+            speed = 0;
+        }
+    }
 
 
 
