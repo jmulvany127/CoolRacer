@@ -77,54 +77,37 @@ public class ReplayMenu : MonoBehaviour
 
     public void collision() {
         Debug.Log("Collided");
-        
-            if(FlowManager.Instance.Track <= 3){
-                if (!FlowManager.Instance.Arcade) {
-                    UpdateSave.currentTime = time.ClearTimer();
-                }
-                //UpdateSave.currentScore = 0;        //UPDATE WHEN SCOREKEEPER IMPLEMENTED
-            }
-            else if(FlowManager.Instance.Track > 3){
-                UpdateSave.currentTime = 0;
-                //UpdateSave.currentScore = score;        //UPDATE WHEN SCOREKEEPER IMPLEMENTED
-            }
-
-            if (!FlowManager.Instance.Arcade) {
-                time.continue_inc = false;
-            }
-            
-            Time.timeScale = 0f;
-            UpdateSave.usernameToGet = FlowManager.Instance.email;
-            UpdateSave.UpdateDatabase();
-            Debug.Log("enter menu");
-            replayMenu.SetActive(true);
-        
+        handleEnd();
     }
     
 
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("Collided");
         if (other.gameObject.name == "Racer") {
-            if(FlowManager.Instance.Track <= 3){
-                if (!FlowManager.Instance.Arcade) {
-                    UpdateSave.currentTime = time.ClearTimer();
-                }
-                //UpdateSave.currentScore = 0;        //UPDATE WHEN SCOREKEEPER IMPLEMENTED
-            }
-            else if(FlowManager.Instance.Track > 3){
-                UpdateSave.currentTime = 0;
-                //UpdateSave.currentScore = score;        //UPDATE WHEN SCOREKEEPER IMPLEMENTED
-            }
-
-            if (!FlowManager.Instance.Arcade) {
-                time.continue_inc = false;
-            }
-            
-            Time.timeScale = 0f;
-            UpdateSave.usernameToGet = FlowManager.Instance.email;
-            UpdateSave.UpdateDatabase();
-            Debug.Log("enter menu");
-            replayMenu.SetActive(true);
+            handleEnd();
         } 
+    }
+
+    private void handleEnd() {
+        if(FlowManager.Instance.Track <= 3) {
+            if (!FlowManager.Instance.Arcade) {
+                UpdateSave.currentTime = time.ClearTimer();
+            }
+            //UpdateSave.currentScore = 0;        //UPDATE WHEN SCOREKEEPER IMPLEMENTED
+        }
+        else if(FlowManager.Instance.Track > 3){
+            UpdateSave.currentTime = 0;
+            //UpdateSave.currentScore = score;        //UPDATE WHEN SCOREKEEPER IMPLEMENTED
+        }
+
+        if (!FlowManager.Instance.Arcade) {
+            time.continue_inc = false;
+        }
+        
+        Time.timeScale = 0f;
+        UpdateSave.usernameToGet = FlowManager.Instance.email;
+        UpdateSave.UpdateDatabase();
+        Debug.Log("enter menu");
+        replayMenu.SetActive(true);
     }
 }
