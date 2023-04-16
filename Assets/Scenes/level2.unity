@@ -1197,6 +1197,7 @@ MonoBehaviour:
   time: {fileID: 0}
   car: {fileID: 0}
   UpdateSave: {fileID: 0}
+  scoreArcade: {fileID: 0}
   replayMenu: {fileID: 439778145}
 --- !u!1001 &267500463
 PrefabInstance:
@@ -1305,15 +1306,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.b
-      value: 0.68235296
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.g
-      value: 0.68235296
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.r
-      value: 0.6509804
+      value: 0.6666667
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Pivot.x
@@ -1405,15 +1406,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.b
-      value: 0.68235296
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.g
-      value: 0.68235296
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Color.r
-      value: 0.6509804
+      value: 0.6666667
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
@@ -4001,15 +4002,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1891080520757206716, guid: c42d8d52d7bbfd344b4b90e3e681cdd8, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.47968104
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 1891080520757206716, guid: c42d8d52d7bbfd344b4b90e3e681cdd8, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.4811321
+      value: 0.67058825
       objectReference: {fileID: 0}
     - target: {fileID: 1891080520757206716, guid: c42d8d52d7bbfd344b4b90e3e681cdd8, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.46978465
+      value: 0.6666667
       objectReference: {fileID: 0}
     - target: {fileID: 1891080520757206716, guid: c42d8d52d7bbfd344b4b90e3e681cdd8, type: 3}
       propertyPath: m_isRightToLeft
@@ -4017,7 +4018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1891080520757206716, guid: c42d8d52d7bbfd344b4b90e3e681cdd8, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4286217080
+      value: 4289440682
       objectReference: {fileID: 0}
     - target: {fileID: 1891080520757206716, guid: c42d8d52d7bbfd344b4b90e3e681cdd8, type: 3}
       propertyPath: m_enableVertexGradient
