@@ -23,12 +23,12 @@ public class TableScript : MonoBehaviour
         FlowManager.Instance.SetTrack(0);
         if (FlowManager.Instance.email != "default@gmail.com") {
             CloudManager.Instance.statsTable(FlowManager.Instance.email);
-            mode1track1.text = CloudManager.Instance.timeTrack1.ToString();
-            mode1track2.text = CloudManager.Instance.timeTrack2.ToString();
-            mode1track3.text = CloudManager.Instance.timeTrack3.ToString();
-            mode2track1.text = CloudManager.Instance.arcadeTrack1.ToString();
-            mode2track2.text = CloudManager.Instance.arcadeTrack2.ToString();
-            mode2track3.text = CloudManager.Instance.arcadeTrack3.ToString();
+            mode1track1.text = (CloudManager.Instance.timeTrack1 == float.MaxValue) ? "SCORES" : CloudManager.Instance.timeTrack1.ToString();
+            mode1track2.text = (CloudManager.Instance.timeTrack2 == float.MaxValue) ? "SCORES" : CloudManager.Instance.timeTrack2.ToString();
+            mode1track3.text = (CloudManager.Instance.timeTrack3 == float.MaxValue) ? "SCORES" : CloudManager.Instance.timeTrack3.ToString();
+            mode2track1.text = (CloudManager.Instance.arcadeTrack1 == 0) ? "SCORES" : CloudManager.Instance.arcadeTrack1.ToString();
+            mode2track2.text = (CloudManager.Instance.arcadeTrack2 == 0) ? "SCORES" : CloudManager.Instance.arcadeTrack2.ToString();
+            mode2track3.text = (CloudManager.Instance.arcadeTrack3 == 0) ? "SCORES" : CloudManager.Instance.arcadeTrack3.ToString();
         } else {
             mode1track1.text = "SCORES";
             mode1track2.text = "SCORES";
