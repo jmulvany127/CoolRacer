@@ -64,7 +64,6 @@ public class ScoreKeeper : MonoBehaviour
 
     public int CLearScore() {
         int result = score;
-        score = 0;
         return result;
     }
 }

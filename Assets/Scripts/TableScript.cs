@@ -19,13 +19,23 @@ public class TableScript : MonoBehaviour
         // todo change so that the database field for each is used
         
         // FlowManager.Instance.email // for user email
-
-        float dummy = 47f;
-        mode1track1.text = dummy.ToString();
-        mode1track2.text = dummy.ToString();
-        mode1track3.text = dummy.ToString();
-        mode2track1.text = dummy.ToString();
-        mode2track2.text = dummy.ToString();
-        mode2track3.text = dummy.ToString();
+        FlowManager.Instance.checkEmail();
+        FlowManager.Instance.SetTrack(0);
+        if (FlowManager.Instance.email != "default@gmail.com") {
+            CloudManager.Instance.statsTable(FlowManager.Instance.email);
+            mode1track1.text = CloudManager.Instance.timeTrack1.ToString();
+            mode1track2.text = CloudManager.Instance.timeTrack2.ToString();
+            mode1track3.text = CloudManager.Instance.timeTrack3.ToString();
+            mode2track1.text = CloudManager.Instance.arcadeTrack1.ToString();
+            mode2track2.text = CloudManager.Instance.arcadeTrack2.ToString();
+            mode2track3.text = CloudManager.Instance.arcadeTrack3.ToString();
+        } else {
+            mode1track1.text = "SCORES";
+            mode1track2.text = "SCORES";
+            mode1track3.text = "SCORES";
+            mode2track1.text = "SCORES";
+            mode2track2.text = "SCORES";
+            mode2track3.text = "SCORES";
+        }
     }
 }

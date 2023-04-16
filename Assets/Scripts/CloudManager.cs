@@ -87,9 +87,9 @@ public class CloudManager : MonoBehaviour
     //this function is used to load data from firestore
     //required when comparing lap times and arcadeScores
     //set username from the other script
-    public void readData(string username)
+    public void readData(string GivenUsername)
     {
-        db.Collection("Users").Document(username).GetSnapshotAsync().ContinueWith(task =>
+        db.Collection("Users").Document(GivenUsername).GetSnapshotAsync().ContinueWith(task =>
         {
             if (task.IsCompleted)
             {
@@ -102,31 +102,37 @@ public class CloudManager : MonoBehaviour
                         if (pair.Key == "Time Track 1")
                         {
                             timeTrack1 = float.Parse(pair.Value.ToString());
+                            Debug.Log("track 1" + timeTrack1.ToString());
                         }
 
                         else if (pair.Key == "Time Track 2")
                         {
                             timeTrack2 = float.Parse(pair.Value.ToString());
+                            Debug.Log("track 2" + timeTrack2.ToString());
                         }
 
                         else if (pair.Key == "Time Track 3")
                         {
                             timeTrack3 = float.Parse(pair.Value.ToString());
+                            Debug.Log("track 3" + timeTrack3.ToString());
                         }
 
                         else if (pair.Key == "Arcade Track 1")
                         {
                             arcadeTrack1 = int.Parse(pair.Value.ToString());
+                            Debug.Log("track 4" + arcadeTrack1.ToString());
                         }
 
                         else if (pair.Key == "Arcade Track 2")
                         {
                             arcadeTrack2 = int.Parse(pair.Value.ToString());
+                            Debug.Log("track 5" + arcadeTrack2.ToString());
                         }
 
                         else if (pair.Key == "Arcade Track 3")
                         {
                             arcadeTrack3 = int.Parse(pair.Value.ToString());
+                            Debug.Log("track 6" + arcadeTrack3.ToString());
                         }
                     }
                 }
@@ -137,9 +143,9 @@ public class CloudManager : MonoBehaviour
 
 
     //call this at the finish line
-    public void UpdateHighscore(string username, float newRecord, int highscore, int trackMode)
+    public void UpdateHighscore(string GivenUsername, float newRecord, int highscore, int trackMode)
     {
-        readData(username);
+        readData(GivenUsername);
         // Save time trial track 1
         if (trackMode == 1)
         {
@@ -148,7 +154,7 @@ public class CloudManager : MonoBehaviour
                 {"Time Track 1", newRecord}
             };
 
-            db.Collection("Users").Document(username).UpdateAsync(update).ContinueWith(task =>
+            db.Collection("Users").Document(GivenUsername).UpdateAsync(update).ContinueWith(task =>
             {
                 if (task.IsCompleted)
                 {
@@ -170,7 +176,7 @@ public class CloudManager : MonoBehaviour
                 {"Time Track 2", newRecord}
             };
 
-            db.Collection("Users").Document(username).UpdateAsync(update).ContinueWith(task =>
+            db.Collection("Users").Document(GivenUsername).UpdateAsync(update).ContinueWith(task =>
             {
                 if (task.IsCompleted)
                 {
@@ -192,7 +198,7 @@ public class CloudManager : MonoBehaviour
                 {"Time Track 3", newRecord}
             };
 
-            db.Collection("Users").Document(username).UpdateAsync(update).ContinueWith(task =>
+            db.Collection("Users").Document(GivenUsername).UpdateAsync(update).ContinueWith(task =>
             {
                 if (task.IsCompleted)
                 {
@@ -214,7 +220,7 @@ public class CloudManager : MonoBehaviour
                 {"Arcade Track 1", highscore}
             };
 
-            db.Collection("Users").Document(username).UpdateAsync(update).ContinueWith(task =>
+            db.Collection("Users").Document(GivenUsername).UpdateAsync(update).ContinueWith(task =>
             {
                 if (task.IsCompleted)
                 {
@@ -236,7 +242,7 @@ public class CloudManager : MonoBehaviour
                 {"Arcade Track 2", highscore}
             };
 
-            db.Collection("Users").Document(username).UpdateAsync(update).ContinueWith(task =>
+            db.Collection("Users").Document(GivenUsername).UpdateAsync(update).ContinueWith(task =>
             {
                 if (task.IsCompleted)
                 {
@@ -258,11 +264,11 @@ public class CloudManager : MonoBehaviour
                 {"Arcade Track 3", highscore}
             };
 
-            db.Collection("Users").Document(username).UpdateAsync(update).ContinueWith(task =>
+            db.Collection("Users").Document(GivenUsername).UpdateAsync(update).ContinueWith(task =>
             {
                 if (task.IsCompleted)
                 {
-                    Debug.Log("Track 2 highscore added to database!");
+                    Debug.Log("Track 3 highscore added to database!");
                 }
                 else
                 {
@@ -276,5 +282,9 @@ public class CloudManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void statsTable(string GivenUsername) {
+        readData(GivenUsername);
     }
 }

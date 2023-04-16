@@ -47,7 +47,7 @@ public class FlowManager : MonoBehaviour
         Instance.TimeTrial = true;
     }
 
-    private void checkEmail() {
+    public void checkEmail() {
         if(System.String.IsNullOrEmpty(Instance.email)) {
             SetEmail("default@gmail.com");
         }

@@ -78,18 +78,22 @@ public class SaveHighscore : MonoBehaviour
         }
     }
 
-    public void UpdateDatabase()
+    public void UpdateDatabase() //todo fix this
     {
+        CloudManager.Instance.readData(FlowManager.Instance.email);
         loadData();
         //if the current score is greater than the previous best score
         //update highscore and add it to database
+        if (FlowManager.Instance.Arcade) {
+            if (currentScore > highscore)
+            {
+                CloudManager.Instance.UpdateHighscore(usernameToGet, currentTime, currentScore, FlowManager.Instance.Track);
+            }
+        } else {
         if (currentTime < bestlap)
-        {
-            CloudManager.Instance.UpdateHighscore(usernameToGet, currentTime, currentScore, FlowManager.Instance.Track);
-        }
-        if (currentScore > highscore)
-        {
-            CloudManager.Instance.UpdateHighscore(usernameToGet, currentTime, currentScore, FlowManager.Instance.Track);
+            {
+                CloudManager.Instance.UpdateHighscore(usernameToGet, currentTime, currentScore, FlowManager.Instance.Track);
+            }
         }
     }
 }

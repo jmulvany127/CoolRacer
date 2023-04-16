@@ -43,6 +43,7 @@ public class LoginScript : MonoBehaviour
         {
             Debug.Log("logging in");
             SignInWithEmailAndPassword(email, password);
+            CloudManager.Instance.statsTable(FlowManager.Instance.email); // so that table can update
         }
     }
 
