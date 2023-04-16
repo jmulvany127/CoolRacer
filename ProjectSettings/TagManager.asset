@@ -21,6 +21,7 @@ TagManager:
   - replay
   - track
   - bound
+  - scoreKeeper
   layers:
   - Default
   - TransparentFX

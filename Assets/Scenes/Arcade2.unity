@@ -1193,6 +1193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreKeeper
       objectReference: {fileID: 0}
+    - target: {fileID: 2920387221207267951, guid: 074952f89305df147adcbe0b8ec736de, type: 3}
+      propertyPath: m_TagString
+      value: scoreKeeper
+      objectReference: {fileID: 0}
     - target: {fileID: 5927765803755557326, guid: 074952f89305df147adcbe0b8ec736de, type: 3}
       propertyPath: shownScore
       value: 

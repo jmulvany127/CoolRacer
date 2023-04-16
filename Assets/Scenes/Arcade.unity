@@ -1260,6 +1260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreKeeper
       objectReference: {fileID: 0}
+    - target: {fileID: 2920387221207267951, guid: 074952f89305df147adcbe0b8ec736de, type: 3}
+      propertyPath: m_TagString
+      value: scoreKeeper
+      objectReference: {fileID: 0}
     - target: {fileID: 5927765803755557326, guid: 074952f89305df147adcbe0b8ec736de, type: 3}
       propertyPath: timeVal
       value: 5
@@ -1347,11 +1351,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 188.89
+      value: 188.89001
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 194.89
+      value: 194.89001
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

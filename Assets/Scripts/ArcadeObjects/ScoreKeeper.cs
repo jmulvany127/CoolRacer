@@ -61,4 +61,10 @@ public class ScoreKeeper : MonoBehaviour
         TenthDecimal,
         HundredthsDecimal
     }
+
+    public int CLearScore() {
+        int result = score;
+        score = 0;
+        return result;
+    }
 }

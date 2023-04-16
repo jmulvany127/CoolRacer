@@ -9,6 +9,7 @@ public class ReplayMenu : MonoBehaviour
     public Timer time;
     public Controller car;
     public SaveHighscore UpdateSave;
+    public ScoreKeeper scoreArcade;
 
 
     public GameObject replayMenu;
@@ -20,6 +21,8 @@ public class ReplayMenu : MonoBehaviour
         // logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<score>();
         if (!FlowManager.Instance.Arcade) {
             time = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+        } else {
+            scoreArcade = GameObject.FindGameObjectWithTag("scoreKeeper").GetComponent<ScoreKeeper>();
         }
         car = GameObject.FindGameObjectWithTag("Racer").GetComponent<Controller>();
         UpdateSave = GameObject.FindGameObjectWithTag("UpdateSave").GetComponent<SaveHighscore>();
@@ -93,11 +96,12 @@ public class ReplayMenu : MonoBehaviour
             if (!FlowManager.Instance.Arcade) {
                 UpdateSave.currentTime = time.ClearTimer();
             }
-            //UpdateSave.currentScore = 0;        //UPDATE WHEN SCOREKEEPER IMPLEMENTED
+            UpdateSave.currentScore = 0;        
         }
-        else if(FlowManager.Instance.Track > 3){
-            UpdateSave.currentTime = 0;
-            //UpdateSave.currentScore = score;        //UPDATE WHEN SCOREKEEPER IMPLEMENTED
+        else if(FlowManager.Instance.Track > 3) {
+            UpdateSave.currentTime = 0; 
+            
+            UpdateSave.currentScore = scoreArcade.CLearScore();
         }
 
         if (!FlowManager.Instance.Arcade) {
