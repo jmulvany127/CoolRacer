@@ -14,11 +14,13 @@ public class LoginScript : MonoBehaviour
 
     private string user_email;
     private string user_password;
+    private bool isValidEmail;
 
     void Start()
     {
         user_email = "*";
         user_password = "*";
+        isValidEmail = false;
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
             FirebaseApp.Create();
@@ -73,6 +75,7 @@ public class LoginScript : MonoBehaviour
         user_email = input_email.text;
         CloudManager.Instance.username = user_email;
         FlowManager.Instance.email = user_email;
+        isValidEmail = CloudManager.Instance.isEmailRegistered(user_email);
     }
 
     public void onRegisterSelect()
@@ -85,10 +88,14 @@ public class LoginScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("registering");
-            RegisterWithEmailAndPassword(email, password);
+            if (!isValidEmail) {
+                Debug.Log("not registering, user found");
+            } else {
+                Debug.Log("registering");
+                RegisterWithEmailAndPassword(email, password);
+                CloudManager.Instance.SaveData();
+            }
         }
-        CloudManager.Instance.SaveData();
     }
 
     void RegisterWithEmailAndPassword(string email, string password)

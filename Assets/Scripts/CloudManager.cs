@@ -17,6 +17,7 @@ public class CloudManager : MonoBehaviour
     public float timeTrack3;
     public string username;// = FlowManager.Instance.email;
     //public string usernameToGet;// = FlowManager.Instance.email;
+    private bool isValidEmail;
 
     public static CloudManager Instance;
 
@@ -286,5 +287,20 @@ public class CloudManager : MonoBehaviour
 
     public void statsTable(string GivenUsername) {
         readData(GivenUsername);
+    }
+
+    public bool isEmailRegistered(string GivenUsername) {
+        db.Collection("Users").Document(GivenUsername).GetSnapshotAsync().ContinueWith(task => 
+        {
+            if (task.IsCompleted) {
+                DocumentSnapshot snapshot = task.Result;
+                if (snapshot.Exists) {
+                    isValidEmail = true;
+                } else {
+                    isValidEmail = false;
+                }
+            }
+        });
+        return isValidEmail;
     }
 }
