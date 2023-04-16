@@ -276,6 +276,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 720426791}
     m_Modifications:
+    - target: {fileID: 266609892418332062, guid: 334849bbfd5a327459f074e5759e0c37, type: 3}
+      propertyPath: m_Offset.x
+      value: 2.4
+      objectReference: {fileID: 0}
     - target: {fileID: 606470554607068118, guid: 334849bbfd5a327459f074e5759e0c37, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1631,6 +1635,7 @@ MonoBehaviour:
   time: {fileID: 0}
   car: {fileID: 0}
   UpdateSave: {fileID: 0}
+  scoreArcade: {fileID: 0}
   replayMenu: {fileID: 1698365367}
 --- !u!1001 &572206665
 PrefabInstance:
