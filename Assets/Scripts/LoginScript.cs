@@ -16,6 +16,8 @@ public class LoginScript : MonoBehaviour
     private string user_password;
     private bool isValidEmail;
 
+    private TouchScreenKeyboard keyboard;
+
     void Start()
     {
         user_email = "*";
@@ -122,6 +124,14 @@ public class LoginScript : MonoBehaviour
     {
         user_password = input_password.text;
         Debug.Log("PASSWORD " + input_password.text);
+    }
+
+    public void openKeyboard() {
+        keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+    }
+
+    public void openKeyboardSecure() {
+        keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, true);
     }
 }
 
