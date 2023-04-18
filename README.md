@@ -1,12 +1,38 @@
-# Introduction
+# COOL RACER
 
-This is a blank template for developing a 2D game for mobile.
+## Introduction
 
-Clone the repository then open it as a unity project.
+* Module: 3D6 Software Design Analysis
+* A 2D Top-Down Racing Game built using Unity
+* It is class
 
-Camera following:
+## Instructions
 
-[+] The project is currently configured to have two moveable objects, circle and triangle.
-[+] Control circle with keyboard arrows, control triangle with WASD.
-[+] Pressing keyboard K toggles camera following between the two objects.
-[+] Commented out code allows for camera following on one object.
+* Clone the repository then open it as a project within Unity Hub.
+* You must launch the app from the mainmenu scene.
+* To save stats, you must sign in.
+* In "Game" set to "Play Maximised" and "1920x1080 Landscape" otherwise game content may be off screen.
+
+## Unity Game Engine Version
+
+* 2021.3.20f1
+
+## The Team
+
+* SAAD AMIR
+* CONOR BOWLER
+* LEON CAMPBELL
+* FIONA EGUARE
+* NATALIE ENG
+* ELIJAH HEDRICK
+* UJJAYANT KADIAN
+* AARON MCCANN
+* NOLLAIG MCHUGH
+* JOE MULVANY
+* MATTHEW NOBLE
+* LUCAS SCHMIDT
+* GUNJAN SHAHAPURKAR
+* CORMAC SHARKEY
+* CIAN TWOMEY
+* SANTHOSH NARAYAN VENKATARAMAN
+* ZHONGKAI YANG
