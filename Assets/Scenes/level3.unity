@@ -1747,11 +1747,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5331968426982121088, guid: b62e5ce2f7fa66b44b8372b9d4b7804d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -51.1
+      value: -50.95
       objectReference: {fileID: 0}
     - target: {fileID: 5331968426982121088, guid: b62e5ce2f7fa66b44b8372b9d4b7804d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18
+      value: 19.2
       objectReference: {fileID: 0}
     - target: {fileID: 5331968426982121088, guid: b62e5ce2f7fa66b44b8372b9d4b7804d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2359,11 +2359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 381629662946006108, guid: a52c710d87b6e774097a677894ecc9a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -102.2
+      value: -103
       objectReference: {fileID: 0}
     - target: {fileID: 381629662946006108, guid: a52c710d87b6e774097a677894ecc9a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.1
+      value: 5.9
       objectReference: {fileID: 0}
     - target: {fileID: 381629662946006108, guid: a52c710d87b6e774097a677894ecc9a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2618,7 +2618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be522f52aed98c647b76b1ef51574ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 20
+  Range: 18
   Target: {fileID: 2089107478}
   projectilePrefab: {fileID: 4153662722514157340, guid: 6ec33c26ff620af40b6739a9e1aa080c, type: 3}
   Gun: {fileID: 1214165170}
@@ -3186,7 +3186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2853031845819682538, guid: 26f56a9af749215429684e4c255c5642, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -141.74895
+      value: -140.4
       objectReference: {fileID: 0}
     - target: {fileID: 2853031845819682538, guid: 26f56a9af749215429684e4c255c5642, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3833,11 +3833,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2853031845819682538, guid: 26f56a9af749215429684e4c255c5642, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -90
+      value: -91.12
       objectReference: {fileID: 0}
     - target: {fileID: 2853031845819682538, guid: 26f56a9af749215429684e4c255c5642, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -50.9
+      value: -53
       objectReference: {fileID: 0}
     - target: {fileID: 2853031845819682538, guid: 26f56a9af749215429684e4c255c5642, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5904,7 +5904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be522f52aed98c647b76b1ef51574ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 18
+  Range: 12
   Target: {fileID: 2089107478}
   projectilePrefab: {fileID: 4153662722514157340, guid: 6ec33c26ff620af40b6739a9e1aa080c, type: 3}
   Gun: {fileID: 1294504284}
@@ -6186,7 +6186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be522f52aed98c647b76b1ef51574ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 22
+  Range: 16
   Target: {fileID: 2089107478}
   projectilePrefab: {fileID: 4153662722514157340, guid: 6ec33c26ff620af40b6739a9e1aa080c, type: 3}
   Gun: {fileID: 896169905}
@@ -6719,7 +6719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be522f52aed98c647b76b1ef51574ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 18
+  Range: 12
   Target: {fileID: 2089107478}
   projectilePrefab: {fileID: 4153662722514157340, guid: 6ec33c26ff620af40b6739a9e1aa080c, type: 3}
   Gun: {fileID: 1281036131}
