@@ -1,4 +1,6 @@
 # COOL RACER
+The project was cloned from its original gitlab repo. Worked as a team leader for the game development team in charge of building the playable aspect of the game,
+while other teams managed data storage, the opening UI and game menu and the user authentication service. The finished product is playable as an android app. 
 
 ## Introduction
 
